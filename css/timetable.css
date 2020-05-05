@@ -1,0 +1,32 @@
+*{
+    font-size: 110%;
+}
+h2{
+    font-size: 200%;
+}
+caption{
+    border: solid 1px;
+    font-size: 50%;
+    font-weight: bold;
+}
+table,td,tr,th{
+    border: 1px gray solid;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+th{
+    background-color: yellow;
+}
+tr{
+    background-color: gainsboro;
+    
+}
+
+.th2{
+    background-color: orange;
+}
+
+label,h2 {
+    color: blue;
+}
