@@ -11,26 +11,25 @@
         <div class="class2">
             <FORM>
                 <div class="headtext">SỞ THÍCH CỦA BẠN</div>
-                <LABEL>Họ và tên</LABEL>
-                <input type="text" name="name"><br>
-                <label>Email</label><input type="email"><br>
-                <label style="float: left;"> Sở thích</label>
-                    <div style="float: left;">
-                        <div> 
-                            <input type="checkbox" name="sothich"> Thể thao
-                            <input type="checkbox" name="sothich"> Âm nhạc
-                            <input type="checkbox" name="sothich"> Đọc sách
+                <LABEL>Họ và tên</LABEL><input class="box" maxlength="20"  type="text" name="name" value=""><br>
+                <label>Email</label><input class="box" type="email"><br>
+                <label style="float: left; margin-top: 20px;"> Sở thích</label>
+                    <div style="float: left;"class="sothich">
+                        <div > 
+                            <input  type="checkbox" name="sothich"> <span>Thể thao</span>
+                            <input  type="checkbox" name="sothich"> <span>Âm nhạc</span>
+                            <input  type="checkbox" name="sothich"> <span>Đọc sách</span>
                         </div>
                         <div> 
-                            <input type="checkbox" name="sothich"> Lướt Web
-                            <input type="checkbox" name="sothich"> Chơi Game
-                            <input type="checkbox" name="sothich"> Điện ảnh
+                            <input  type="checkbox" name="sothich"> <span>Lướt Web</span>
+                            <input  type="checkbox" name="sothich"> <span>Chơi Game</span>
+                            <input  type="checkbox" name="sothich"> <span>Điện ảnh</span>
                         </div>
                         <div> 
-                            <input type="checkbox" name="sothich"> Du lịch
+                            <input  type="checkbox" name="sothich"> <span>Du lịch</span>
                         </div>
                     </div>
-                    <div style="clear: both;">
+                    <div class="button" style="clear: both;">
                         <input type="submit" value="Gửi thông tin" >
                         <input type="reset" value="Nhập lại">
                     </div>

@@ -1,0 +1,29 @@
+form{
+    border: solid 1px gray;
+    width: 500px;
+    height: 500px;
+    background-color: #F4FA98;
+}
+h2{
+    border: solid 1px gray;
+    background-color:rgb(124, 243, 229) ;
+}
+label{
+    color: red;
+    display: inline-block;
+    width: 100px;
+    margin:  10px 20px;
+
+}
+.button{
+    text-align: center;
+    margin-top: 50px;
+}
+.button input{
+    margin: 20px;
+}
+.gender{
+    color: black;
+    width: 35px;
+    margin: 2px;
+}

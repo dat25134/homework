@@ -3,7 +3,7 @@
     float: left;
     width: 28%;
     text-align: center;
-    background-image: url('img/bg1.jpg');
+    background-image: url('img/bg1.jpg') ;
     color: blueviolet;
     height: 1120px;
     border: solid 2px gray;

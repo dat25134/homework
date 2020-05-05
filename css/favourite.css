@@ -23,6 +23,28 @@
     border: solid 1px gray;
 }
 label{
+    display: inline-block;
     color: blue;
+    width: 100px;
+    text-align: right;
+}
 
+.box{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.sothich{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+}
+span{
+    width: 80px;
+    display: inline-block;
+}
+.button{
+    text-align: center;
 }
