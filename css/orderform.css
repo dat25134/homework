@@ -1,0 +1,30 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+form{
+    margin: 25px;
+    border: solid 1px gray;
+    width: 500px;
+    height: 600px;
+}
+div{
+    margin: 20px 0px 20px 0px ;
+}
+label{
+    
+}
+input{
+    margin-left: 20px;
+
+}
+.text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.phone{
+    width: 70px;
+    margin-top: 20px;
+}

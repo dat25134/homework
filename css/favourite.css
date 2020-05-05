@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.class1{
+    border: solid 1px gray;
+    width: 600px;
+    height: 400px;
+    background-color:#A9F5F2 ;
+}
+.class2{
+    border: solid 1px gray;
+    margin: 25px;
+    width: 550px;
+    height: 350px;
+    background-color: white;
+}
+.headtext{
+    margin: 5px;
+    background-color: tomato;
+    text-align: center;
+    font-weight: bold;
+    border: solid 1px gray;
+}
+label{
+    color: blue;
+
+}
