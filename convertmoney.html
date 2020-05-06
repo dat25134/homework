@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/convertmoney.css">
+</head>
+<body>
+    <span style="margin-left: 50px;">Amount</span> <span style="margin-left: 200px;"> From Curency</span> <span style="margin-left: 200px;"> To Curency</span><br>
+    <input type="text" id="m"> <div id="dv" style="width: 30px; float: left;">Type</div>
+    <select style="margin-left: 230px;" name="country" id="country">
+        <option value="a"> Việt Nam</option>
+        <option value="b"> USA</option>
+        <option value="c"> ThaiLand</option>
+        <option value="d"> Laos</option>
+    </select>
+    <select style="margin-left: 250px;" name="money" id="type">
+        <option value="1"> VNĐ</option>
+        <option value="2"> $USA</option>
+        <option value="3"> Baht</option>
+        <option value="4"> LAK</option>
+    </select>
+    <button onclick="change()" style="margin-left: 100px;"> Convert</button><br>
+    <div id="kq" style="margin-top:50px; color: blue;"> Result : ......</div>
+<script src="js/convertmoney.js"></script>
+</body>
+</html>

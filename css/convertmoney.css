@@ -1,0 +1,9 @@
+span{
+    font-weight: bold;
+    font-size: 150%;
+}
+input{
+    float: left;
+    margin-left: 70px;
+    width: 50px;
+}

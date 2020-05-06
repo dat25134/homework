@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/baitapjs.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap da va sờ cờ nhíp</title>
+</head>
+<body>
+    <div class="bai1">
+        <h2> Tính trung bình cộng điểm 3 môn</h2>
+        Hóa <input style="margin-left: 20px;" type="text" id="hoa" required><br>
+        Lý <input style="margin-left: 29px;"  type="text" id="ly" required><br>
+        Toán <input style="margin-left: 15px;"  type="text" id="toan" required><br>
+        <button onclick="ave()" style="margin-left:150px"> Điểm trung bình</button>
+        <div id="kq1"> Điểm TB = </div>
+        
+    </div>
+    <div class="bai2">
+        <h2>Chuyển đổi C sang F</h2>
+        Nhập độ C=: <input type="text" id="c" required><br>
+        <button onclick="changeCtoF()" style="margin-left: 230px ;"> Chuyển đổi</button>
+        <div id="kq2">Kết quả :</div>
+        
+    </div>
+    <div class="bai3">
+        <h2>DIỆN TÍCH + CHU VI HÌNH TRÒN</h2>
+        Nhập bán kính đường tròn : <input type="text" id="r"> cm <br>
+        <button onclick="calS()" style="margin-left: 200px;"> Tính</button><br>
+        <div id="kq3"> Diện tích hình tròn: </div>
+        <div id="kq4"> Chu vi hình tròn: </div>      
+    </div>
+    
+    <script src="js/baitapjs.js"></script>
+</body>
+</html>
