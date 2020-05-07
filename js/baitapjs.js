@@ -2,8 +2,15 @@ function ave (){
     let a=document.getElementById('hoa').value ;
     let b=document.getElementById('ly').value ;
     let c=document.getElementById('toan').value ;
-    let ave=(parseFloat(a)+parseFloat(b)+parseFloat(c))/3
-    document.getElementById('kq1').innerHTML= " Điểm TB = " + ave ;
+    if ((a<0) || (a>10) || (b<0) || (b>10) || (c<0) || (c>10))
+        {
+            document.getElementById('kq1').innerHTML= " Nhập lại số điểm";
+        }
+        else
+        {
+            let ave=(parseFloat(a)+parseFloat(b)+parseFloat(c))/3
+            document.getElementById('kq1').innerHTML= " Điểm TB = " + ave ;
+        }
 }
 
 function changeCtoF(){
