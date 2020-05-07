@@ -1,4 +1,6 @@
 //javascript máy tính 1
+const PI=Math.PI;
+const e=Math.E;
 function plus(){
     let a=document.getElementById('a').value;
     let b=document.getElementById('b').value;
@@ -77,6 +79,55 @@ function logarit(){
     let log=Math.log(n);
     document.getElementById('scr').value=log;
 }
+function ln(){
+	var1=document.getElementById('scr').value;
+    let n=parseFloat(var1);
+    let ln=Math.ln(n);
+    document.getElementById('scr').value=ln;
+}
+
+function can2(){
+	var1=document.getElementById('scr').value;
+    let n=parseFloat(var1);
+    let can2=Math.sqrt(n);
+    document.getElementById('scr').value=can2;
+}
+function mu(){
+	var1=document.getElementById('scr').value;
+	document.getElementById('scr').value="0";	
+	check=5;
+}
+function sin(){
+	var1=document.getElementById('scr').value;
+    let n=parseFloat(var1);
+    let sin=Math.sin(n*PI/180);
+    document.getElementById('scr').value=sin;
+}
+function cos(){
+	var1=document.getElementById('scr').value;
+    let n=parseFloat(var1);
+    let cos=Math.cos(n*PI/180);
+    document.getElementById('scr').value=cos;
+}
+function tan(){
+	var1=document.getElementById('scr').value;
+    let n=parseFloat(var1);
+    let tan=Math.tan(n*PI/180);
+    document.getElementById('scr').value=tan;
+}
+function rad(){
+	var1=document.getElementById('scr').value;
+    let n=parseFloat(var1);
+    let rad=n*PI/180;
+    document.getElementById('scr').value=rad;
+}
+function pi(){
+    document.getElementById('scr').value=PI;
+}
+function cosoe(){
+    document.getElementById('scr').value=e;
+}
+
 
 function result()
 	{	
@@ -102,6 +153,13 @@ function result()
 					var div=parseFloat(var1)/parseFloat(var2);
 					document.getElementById('scr').value=div;
 					break;}
+				case 5:{
+						var2=document.getElementById('scr').value;
+						var m=parseFloat(var1);
+						let n=parseFloat(var2);
+						let mu=Math.pow(m,n)
+						document.getElementById('scr').value=mu;
+						break;}
 				default:{
 					document.getElementById('scr').value="Error!!!";
 				}
