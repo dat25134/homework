@@ -43,6 +43,7 @@ function addition(){
 	var1=document.getElementById('scr').value;
 	document.getElementById('scr').value="0";	
 	check=1;
+	document.
 }
 function subtract(){
 	var1=document.getElementById('scr').value;
