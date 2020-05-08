@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Nobita</title>
+    <link rel="stylesheet" href="../css/eventNobita.css">
+</head>
+<body onload="Ready()">
+    <img src="../img/nobita.jpg" id="nobita" alt="" style=" top: 0; left: 0;"><br>
+    <button onclick="reset()"> Reset</button>
+    <script>
+        let setimg=document.getElementById('nobita')
+        function reset(){
+            setimg.style.position='relative';
+            setimg.style.left='0px';
+            setimg.style.top='0px';
+        }
+        function goup(){
+            setimg.style.top = parseInt(setimg.style.top) - 5 + 'px';
+        }
+        function godown(){
+            setimg.style.top = parseInt(setimg.style.top) + 5 + 'px';
+        }
+        function goleft(){
+            setimg.style.left = parseInt(setimg.style.left) - 5 + 'px';
+        }
+        function goright(){
+            console.log(setimg.style.left);
+            setimg.style.left   = parseInt(setimg.style.left) + 5 + 'px';
+            console.log(setimg.style.left);
+        }
+        function move(evt){
+            switch (evt.keyCode){
+                case 37:
+                    goleft();
+                    break;
+                case 39:
+                    goright();
+                    break;
+                case 38:
+                    goup();
+                    break;
+                case 40:
+                    godown();
+                    break; 
+            }
+        }
+        function Ready() {
+            window.addEventListener('keydown', move);
+            }
+        
+    </script>
+</body>
+</html>
