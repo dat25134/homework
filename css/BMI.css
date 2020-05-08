@@ -1,0 +1,38 @@
+
+*{
+    text-align: left;
+}
+td,tr{
+    width: 200px;
+}
+span{
+    font-weight: bold;
+}
+.head {
+    margin: 10px;
+    border-bottom: gray 3px solid;
+    width: 150px;
+    box-shadow: 1px 1px 1px #AAA;
+}
+input{
+    border-radius: 5px;
+}
+
+#part1{
+    border: 1px solid;
+    width: 200px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+button{
+    background-color: springgreen;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+hr{
+    position: relative;
+    left: 0px;;
+    box-shadow: 1px 1px 1px #AAA ;
+
+}

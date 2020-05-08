@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI - Person</title>
+    <link rel="stylesheet" href="css/BMI.css">
+</head>
+<body>
+    <div id="part1">
+        <div class="head">Nhập cân nặng</div><input type="text" name="" id="weight"> <br>
+        <div class="head">Nhập chiều cao</div> <input type="text" id="height"><br><br>
+        <button onclick="bmi()"> Submit</button>
+    </div>
+    <br><br>
+    <div><span>BMI</span><span style="margin-left: 170px;">Interpretation</span></div>
+    <hr>
+    <table>
+        <tr>
+            <td> BMI < 18.5 </td>
+            <td> Underweight</td>
+        </tr>
+        <tr>
+            <td>18.5 < BMI < 25.0 </td>
+            <td> Normal </td>
+        </tr>
+        <tr>
+            <td> 25.0 < BMI < 30.0 </td>
+            <td> Overweight </td>
+        </tr>
+        <tr>
+            <td> 30.0>BMI </td>
+            <td> Obese </td>
+        </tr>
+    </table>
+    <div id="kq"></div>  
+    <script src="js/BMI.js"></script>
+</body>
+</html>
