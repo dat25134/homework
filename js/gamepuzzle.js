@@ -12,7 +12,7 @@ function changeImg(location){
         case 8:
         case 9: x=6;break;
     }
-    document.getElementById(location).style.backgroundImage= "url('../img/" + x + ".jpg')" ;
+    document.getElementById(location).style.backgroundImage= "url('img/" + x + ".jpg')" ;
 }
 
 function check(){
