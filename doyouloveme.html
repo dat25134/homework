@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me???</title>
+    <style>
+        button{
+            width: 100px;
+            border: chartreuse;
+            border-radius: 5px;
+            padding: 8px;
+            box-shadow: 1px 1px 1px #AAA;
+        }
+        #no{
+            position: relative;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h2> Do you love me???</h2>
+    <button onclick="yesIdo()"> Yes</button>
+    <button onmousemove="moveButton()" id="no"> No</button>
+    <script>
+        function yesIdo(){
+            alert('<3');
+        }
+        function moveButton(){
+            let location=document.getElementById('no');
+            location.style.position='absolute';
+            let a=Math.random()*400;
+            let b=Math.random()*600;
+            location.style.top=a+'px';
+            location.style.left=b+'px';
+        }
+    </script>
+</body>
+</html>
