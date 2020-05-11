@@ -42,7 +42,7 @@ function randomImg(){
             case 8:
             case 9: x=6;break;
         }
-        document.getElementById('topleft').style.backgroundImage= "url('../img/" + x + ".jpg')" ;
+        document.getElementById('topleft').style.backgroundImage= "url('img/" + x + ".jpg')" ;
         let b = Math.floor(Math.random()*10)
         switch (b){
             case 0: 
@@ -56,7 +56,7 @@ function randomImg(){
             case 8:
             case 9: x=6;break;
         }
-        document.getElementById('topright').style.backgroundImage= "url('../img/" + x + ".jpg')" ;
+        document.getElementById('topright').style.backgroundImage= "url('img/" + x + ".jpg')" ;
         let c = Math.floor(Math.random()*10)
         switch (c){
             case 0: 
@@ -70,7 +70,7 @@ function randomImg(){
             case 8:
             case 9: x=6;break;
         }
-        document.getElementById('botleft').style.backgroundImage= "url('../img/" + x + ".jpg')" ;
+        document.getElementById('botleft').style.backgroundImage= "url('img/" + x + ".jpg')" ;
         let d = Math.floor(Math.random()*10)
         switch (d){
             case 0: 
@@ -84,6 +84,6 @@ function randomImg(){
             case 8:
             case 9: x=6;break;
         }
-        document.getElementById('botright').style.backgroundImage= "url('../img/" + x + ".jpg')" ;
+        document.getElementById('botright').style.backgroundImage= "url('img/" + x + ".jpg')" ;
     }
     
