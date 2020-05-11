@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Puzzle</title>
+    <link rel="stylesheet" href="css/gamepuzzle.css">
+</head>
+<body onload="randomImg()">
+    <h1>Game Puzzle</h1>
+    <div id="topleft" onclick="changeImg('topleft'),check()"></div>
+    <div id="topright" onclick="changeImg('topright'),check()"></div>
+    <div id="botleft" onclick="changeImg('botleft'),check()"></div>
+    <div id="botright" onclick="changeImg('botright'),check()"></div>  
+    <div id="part2">
+        <div style= 'clear: both;' id="kq"></div><br><img id="img" src="" alt="">  
+    </div> 
+    <script src="js/gamepuzzle.js">
+    </script>
+</body>
+</html>
