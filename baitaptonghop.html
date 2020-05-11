@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Bài tổng hợp</title>
+    <style>
+        .part1,.part2,.part3,.part4,.part5,.part6,.part7{
+            border: solid 3px gray;
+            text-align:  center;
+            margin: 5px;
+            width: 40%;
+            height: 200px;
+        }
+        .part1 , .part3, .part5{
+            float: left;
+        }
+        .part2 , .part4, .part6{
+            float: left;
+        }
+        .part7{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="part1">
+        <h2> Bài 1</h2>
+        <h5> Kiểm tra xem a có chia hết cho b hay không</h5>
+        <input type="text" id="x">
+        <input type="text" id="y">
+        <button onclick="divideByAll()"> Tính</button>
+        <div id="kq1"> Kết quả :</div>
+    </div>
+    <div class="part2">
+        <h2> Bài 2</h2>
+        <h5> Kiểm tra đủ tuổi vào lớp 10 hay không</h5>
+        <input type="text" id="age">
+        <button onclick="checkAge()"> Tính</button>
+        <div id="kq2"> Kết quả :</div>
+    </div>
+    <div class="part3">
+        <h2> Bài 3</h2>
+        <h5> Kiểm tra xem a là số dương hay số âm</h5>
+        <input type="text" id="number">
+        <button onclick="checkInt()"> Tính</button>
+        <div id="kq3"> Kết quả :</div>
+    </div>
+    <div class="part4">
+        <h2> Bài 4</h2>
+        <h5> Tìm số lớn nhất trong 3 số nhập vào</h5>
+        <input type="text" id="number1">
+        <input type="text" id="number2">
+        <input type="text" id="number3">
+        <button onclick="findMax()"> Tính</button>
+        <div id="kq4"> Kết quả :</div>
+    </div>
+    <div class="part5">
+        <h2> Bài 5</h2>
+        <h5> Nhập điểm, xếp loại học lực</h5>
+        <input type="text" id="point">
+        <button onclick="rank()"> Tính</button>
+        <div id="kq5"> Kết quả :</div>
+    </div>
+    <div class="part6">
+        <h2> Bài 6</h2>
+        <h5> Tính % hoa hồng nhận được tùy doanh thu</h5>
+        Nhập Doanh thu<input type="text" id="doanhthu"> <br>
+        Nhập % hoa hồng: 
+        <input type="text" id="commission"> %
+        <button onclick="commission()"> Tính</button>
+        <div id="kq6"> Kết quả :</div>
+    </div>
+    <div class="part7">
+        <h2> Bài 7 </h2>
+        <h5> Tính cước điện thoại di động</h5>
+        Nhập số phút gọi: <input type="text" id="time"> phút <br>
+        <button onclick="getMoney()"> Tính</button>
+        <div id="kq7"> Kết quả :</div>
+    </div>
+    <script src="js/baitaptonghop.js"></script>
+</body>
+</html>
