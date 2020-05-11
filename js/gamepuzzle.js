@@ -23,7 +23,7 @@ function check(){
     if ((a===b) && (b===c) && (c===d)) {
         document.getElementById('kq').innerHTML= 'BINGO!!!';
         let e='';
-        for (let i=5;i<17;i++) e+=a[i];
+        for (let i=5;i<13;i++) e+=a[i];
         document.getElementById('img').src= e;
     }
 }
@@ -86,4 +86,3 @@ function randomImg(){
         }
         document.getElementById('botright').style.backgroundImage= "url('img/" + x + ".jpg')" ;
     }
-    
