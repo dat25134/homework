@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good fast cheap</title>
+    <style>
+        .toggle-button-demo {
+  text-align: center;
+}
+h2 {
+  color: #333;
+  text-align: center;
+}
+.toggle-ios {
+  display: none;
+}
+.toggle-ios + .toggle-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  margin: 0 auto;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #fbfbfb;
+  border-radius: 2em;
+  padding: 2px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  border: 1px solid #e8eae9;
+}
+.toggle-ios + .toggle-btn:after {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  left: 0;
+  border-radius: 2em;
+  background: #fbfbfb;
+  -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+.toggle-ios:checked + .toggle-btn {
+  background: #86d993;
+}
+.toggle-ios:checked + .toggle-btn:after {
+  left: 50%;
+}
+    </style>
+</head>
+<body>
+    <h2>GOOD - FAST - CHEAP</h2>
+    <div class="toggle-button-demo">
+        <input onclick="check1()" class="toggle toggle-ios" id="toggle1" type="checkbox"/> Good
+        <label class="toggle-btn" for="toggle1"></label>
+      </div>
+      <div class="toggle-button-demo">
+        <input onclick="check2()" class="toggle toggle-ios" id="toggle2" type="checkbox"/> Fast
+        <label class="toggle-btn" for="toggle2"></label>
+      </div>
+      <div class="toggle-button-demo">
+        <input onclick="check3()" class="toggle toggle-ios" id="toggle3" type="checkbox"/> Cheap
+        <label class="toggle-btn" for="toggle3"></label>
+      </div>
+      <script>
+            
+            let a = document.getElementById('toggle1');
+            let b = document.getElementById('toggle2');
+            let c = document.getElementById('toggle3');
+        function check1(){
+             a.checked=true;
+             if (b.checked) {c.checked=false;}
+        }
+        function check2(){
+             b.checked=true;
+             if (c.checked) {a.checked=false;}
+        }
+        function check3(){
+             c.checked=true;
+             if (a.checked) {b.checked=false;}
+        }
+      </script>
+</body>
+</html>
