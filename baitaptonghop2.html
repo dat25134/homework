@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Bài tổng hợp if else</title>
+    <link rel="stylesheet" href="css/baitaptonghop2.css">
+</head>
+
+<body>
+    <div class="part1">
+        <h2> Bài 1</h2>
+        <h5> Chuyển độ C sang độ F</h5>
+        Nhập độ C <input type="text" id="c">
+        <button onclick="changeCtoF()"> Change</button>
+        <div id="kq1"> Kết quả :</div>
+    </div>
+    <div class="part2">
+        <h2> Bài 2</h2>
+        <h5> Chuyển từ m sang feet</h5>
+        Nhập chiều dài m <input type="text" id="m">
+        <button onclick="changeMtoFeet()"> Change</button>
+        <div id="kq2"> Kết quả :</div>
+    </div>
+    <div class="part3">
+        <h2> Bài 3</h2>
+        <h5>Tính diện tích hình vuông khi biết cạnh a</h5>
+        Nhập chiều dài cạnh hình vuông <input type="text" id="a">
+        <button onclick="areaS()"> Tính</button>
+        <div id="kq3"> Kết quả :</div>
+    </div>
+    <div class="part4">
+        <h2> Bài 4</h2>
+        <h5>Tính diện tích hình chữ nhật khi biết 2 cạnh a,b</h5>
+        Nhập chiều dài <input type="text" id="width"> m <br>
+        Nhập chiều rộng <input type="text" id="height"> m
+        <button onclick="areaRectangle()"> Tính</button>
+        <div id="kq4"> Kết quả :</div>
+    </div>
+    <div class="part5">
+        <h2> Bài 5</h2>
+        <h5>Tính diện tích tam giác vuông khi biết 2 cạnh kề a,b</h5>
+        Nhập cạnh kề a <input type="text" id="aTriangle"> m <br>
+        Nhập cạnh kề b <input type="text" id="bTriangle"> m
+        <button onclick="areaTriangle()"> Tính</button>
+        <div id="kq5"> Kết quả :</div>
+    </div>
+    <div class="part6">
+        <h2> Bài 6</h2>
+        <h5> Giải phương trình bậc 1: ax + b = 0</h5>
+        Nhập hệ số a và b: <input style="width: 50px" type="text" id="x">x + <input style="width: 50px" type="text" id="y"> = 0 <br>
+        <button onclick="equation1()"> Tính</button>
+        <div id="kq6"> Kết quả :</div>
+    </div>
+    <div class="part7">
+        <h2> Bài 7</h2>
+        <h5> Giải phương trình bậc 2: ax2 + bx + c = 0</h5>
+        Nhập hệ số a,b và c: <input style="width: 50px" type="text" id="aEquation2">x2 + <input style="width: 50px" type="text" id="bEquation2">x + <input style="width: 50px" type="text" id="cEquation2">  = 0 <br>
+        <button onclick="equation2()"> Tính</button>
+        <div id="kq7"> Kết quả :</div>
+    </div>
+    <div class="part8">
+        <h2> Bài 8</h2>
+        <h5> Nhập vào 1 số và kiểm tra xem có phải là tuổi của con người hay không</h5>
+        Nhập số bất kỳ: <input style="width: 50px" type="text" id="age"> <br>
+        <button onclick="checkAge()"> Kiểm tra </button>
+        <div id="kq8"> Kết quả :</div>
+    </div>
+    <div class="part9">
+        <h2> Bài 9</h2>
+        <h5>  Kiểm tra 3 số nhập vào có phải là cạnh của 1 tam giác hay không</h5>
+        Nhập ba cạnh a,b,c: <input style="width: 50px" type="text" id="aSide">
+        <input style="width: 50px" type="text" id="bSide">
+        <input style="width: 50px" type="text" id="cSide"> <br>
+        <button onclick="checkSideTriangle()"> Kiểm tra </button>
+        <div id="kq9"> Kết quả :</div>
+    </div>
+    <div class="part10">
+        <h2> Bài 10</h2>
+        <h5>  Viết chương trình tính giá điện</h5>
+        Nhập số điện cũ: <input style="width: 50px" type="text" id="old"> kWh <br>
+        Nhập số điện mới: <input style="width: 50px" type="text" id="new"> kWh <br>
+        <button onclick="getMoney()"> Kiểm tra </button>
+        <div id="kq10"> Kết quả :</div>
+    </div>
+    <div class="part11">
+        <h2> Bài 11</h2>
+        <h5>  TÍnh thuế thu nhập cá nhân </h5>
+        Nhập Tổng thu nhập: <input type="text" id="ttn"> <br>
+        Nhập thu nhập được miễn thuế: <input type="text" id="tnmt"><br>
+        <button onclick="getMoney2()"> Kiểm tra </button>
+        <div id="kq11"> Kết quả :</div>
+    </div>
+    <div class="part12">
+        <h2> Bài 12</h2>
+        <h5>  Viết chương trình tính lãi ngân hàng</h5>
+        Nhập số tiền gửi ngân hàng: <input type="text" id="moneyBank"> VNĐ<br>
+        Nhập số tháng: <input style="width: 50px" type="text" id="months"> tháng<br>
+        Nhập số % lãi mỗi tháng: <input style="width: 50px" type="text" id="rate">%<br>
+        <button onclick="getMoney3()"> Kiểm tra </button>
+        <div id="kq12"> Kết quả :</div>
+    </div>
+    
+    <script src="js/baitaptonghop2.js"></script>
+</body>
+
+</html>

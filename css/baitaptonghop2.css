@@ -1,0 +1,16 @@
+.part1,.part2,.part3,.part4,.part5,.part6,.part7,.part8,.part9,.part10,.part11,.part12{
+    border: grey 3px solid;
+    margin: 20px;
+    width: 40%;
+    height: 220px;
+    text-align: center;
+}
+.part1,.part3,.part5,.part7,.part9,.part11 {
+    float: left;
+}
+.part2,.part4,.part6,.part8,.part10,.part12{
+    float: left;
+}
+*{
+    margin: 5px;
+}
