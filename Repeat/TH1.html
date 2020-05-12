@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài thực hành số 1</title>
+</head>
+<body>
+    <div class="part1">
+        Nhập số bất kỳ >0 <input type="text" id="number"><br>
+        <button onclick="repeat2()"> Tính tổng</button>
+        <div id="kq1"> Kết quả</div>
+        
+    </div>
+    <script>
+        function repeat1(){
+            for ( let i=0; i<=5; i++) {
+                console.log(' This is number ' + i);
+            }
+        }
+        repeat1();
+        function repeat2(){
+            let a = + document.getElementById('number').value;
+            let sum=0;
+            if (a<0) {
+                document.getElementById('kq1').innerHTML = " Nhập lại một số lớn hơn 0";
+            } else {
+                for (let i=0;i<a;i++) {
+                sum+=i;
+            }
+            document.getElementById('kq1').innerHTML = "Kết quả: " + sum;
+            }
+            
+        }
+    </script>
+</body>
+</html>
