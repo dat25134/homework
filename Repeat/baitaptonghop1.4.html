@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tổng hợp vòng lặp. Bài 3,5</title>
+</head>
+
+<body>
+    <script>
+        let num1 = 1, num2=0, num3;
+        let check=1;
+        for (let i = 0; i < 20; i++) {
+            num3 = num1;
+            num1 = num1 + num2;
+            num2 = num3;
+            document.write(num1 + " ");
+            if (num1%5===0) {
+                document.write(" <br> Số chia hết cho 5 đầu tiên trong dãy là " + num1);
+                break;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

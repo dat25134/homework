@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tổng hợp vòng lặp. Bài 2</title>
+</head>
+<body>
+    <script>
+        let c=+prompt(' Nhập nhiệt độ');
+        while(true){
+            if (c>=100) {
+                c = + prompt('Hạ nhiệt độ');
+            } else if (c<=20) {
+                c = + prompt('Tăng nhiệt độ');
+            } else {
+                alert("Nhiệt độ của bạn vừa nhập là " + c);
+                break;
+            }
+
+        }
+    </script>
+</body>
+</html>

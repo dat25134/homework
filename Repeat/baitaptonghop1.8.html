@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 8. Game đoán chữ</title>
+</head>
+<body>
+    <h2> Game đoán số trowng khoảng tử 1-100</h2>
+    <div> 
+        Nhập khoảng từ <input type="text" id="a"> tới <input type="text" id="b"><br>
+        <button onclick="play()"> Chơi </button> <button onclick=""> Chơi lại </button>
+    </div>
+    <script>
+        function play(){
+            let a=parseInt(document.getElementById('a').value);
+            let b=parseInt(document.getElementById('b').value);
+            let dem=0;
+            while((dem<a)||(dem>b)){
+            dem = Math.round(Math.random()*101);
+        }
+            let input= parseInt(prompt('Nhập số bạn muốn đoán'));
+            let count = 0;
+            debugger;
+            while (true){
+
+                if (input<dem) { 
+                    alert("Nhỏ rầu! Tăng thêm đi man!!!");
+                }
+                if (input>dem) { 
+                    alert("To rứa! Bớt bớt đi man!!!");
+                }
+                if (input===dem) { 
+                    alert("Quéo Quòe Qoeu!!! Bingo! Số đoán là " + dem);
+                    break;
+                }
+                if (count===2) {
+                    alert("Quéo Quòe Qoeu!!!Thua rầu man!!! Số đúng là" + dem);
+                    break;
+                }
+                input= parseInt(prompt('Nhập số bạn muốn đoán lại'));
+                count+=1;
+            }
+        }
+        
+    </script>
+</body>
+</html>
