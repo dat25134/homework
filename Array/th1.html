@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BÀI THỰC HÀNH SỐ 1 - ARRAY</title>
+</head>
+<body>
+    <input type="text" id="add"><br>
+    <button onclick="add()"> Thêm </button> <button onclick="dis()"> Hiển thị chuỗi</button>
+    <div id="kq"> Hiển thị chuỗi</div>
+    <SCRIPt>
+        let a="";  
+        let array = [];
+       
+        function add(){
+            a = document.getElementById('add').value;
+            array.push(a);
+        }
+        function dis(){
+            let text = "";
+            for (let i=0;i<array.length;i++){
+                text += "Element " + i + " : " + array[i] + "<br>";
+            }
+             document.getElementById('kq').innerHTML = text;
+        }
+    </SCRIPt>
+    
+</body>
+</html>
