@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Heart</title>
+</head>
+<body>
+    <script>
+        let thanleft= -5;
+        let thanright= 19;
+        for (let i=0;i<12;i++){
+            
+            for (let j=0;j<15;j++){
+                if (i===0){
+                    if ((j===3) || (j===4) || (j===2) || (j===10) || (j===11) || (j===12)){
+                        document.write("*&nbsp"); 
+                    }else {
+                            document.write('&nbsp&nbsp&nbsp')
+                        }
+                } else if (i===1){
+                    if ((j===1) || (j===5) || (j===9) || (j===13)){
+                        document.write("*&nbsp"); 
+                    }else {
+                            document.write('&nbsp&nbsp&nbsp')
+                        }
+                } else  if (i===2){
+                    if ((j===0) || (j===6) || (j===8) || (j===14)){
+                        document.write("*&nbsp"); 
+                    }else {
+                            document.write('&nbsp&nbsp&nbsp')
+                        }
+                } else if (i===3){
+                    if ((j===0) || (j===7) || (j===14)){
+                        document.write("*&nbsp"); 
+                    }else {
+                            document.write('&nbsp&nbsp&nbsp')
+                        }
+                } else if (i===4){
+                    if ((j===0) || (j===14)){
+                        document.write("*&nbsp"); 
+                    }else {
+                            document.write('&nbsp&nbsp&nbsp')
+                        }
+                } else  if (i>=5){
+                    debugger;
+                    if (j===thanleft+1){
+                        document.write("*&nbsp");
+                    }else if (j===thanright-1) {
+                        document.write("*&nbsp");
+                        } else {
+                            document.write('&nbsp&nbsp&nbsp')
+                        }
+                } else {
+                    document.write("*&nbsp"); 
+                }             
+            }
+            document.write("<br>");
+            thanleft+=1;thanright-=1;  
+        }
+    </script>
+</body>
+</html>

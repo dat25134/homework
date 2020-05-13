@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lãi ngân hàng</title>
+</head>
+<body>
+    <div class="part12">
+        <h2> Bài 5</h2>
+        <h5>  Viết chương trình tính lãi ngân hàng</h5>
+        Nhập số tiền gửi ngân hàng: <input type="text" id="moneyBank"> VNĐ<br>
+        Nhập số tháng: <input style="width: 50px" type="text" id="months"> tháng<br>
+        Nhập số % lãi mỗi tháng: <input style="width: 50px" type="text" id="rate">%<br>
+        <button onclick="getMoney3()"> Kiểm tra </button>
+        <div id="kq12"> Kết quả :</div>
+    </div>
+    <script>
+        function getMoney3(){
+    let moneyBank = +document.getElementById('moneyBank').value;
+    let months = +document.getElementById('months').value;
+    let rate = +document.getElementById('rate').value;
+    for (let i=1;i<=months;i++){
+        moneyBank = moneyBank + moneyBank*rate/100;
+    }
+    document.getElementById('kq12').innerHTML = " Số tiền lãi theo " + months + " tháng ký gửi là " + moneyBank + " VNĐ";
+}
+    </script>
+    
+</body>
+</html>

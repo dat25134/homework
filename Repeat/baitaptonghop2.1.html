@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Bài tập vòng lặp 2 Bài 1</title>
+</head>
+<body>
+    <script>
+        let num1 = 1, num2=0, num3;
+        let sum=1; check=1;
+        let limit= parseInt(prompt(" Nhập vào số lượng số muốn hiện trong dãy Fibonaci"));
+        document.write(1 + " ");
+        for (let i = 1; i < limit; i++) {
+            num3 = num1;
+            num1 = num1 + num2;
+            num2 = num3;
+            document.write(num1 + " ");
+        }
+    </script>
+    
+</body>
+</html>
