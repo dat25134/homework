@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tổng hợp 1 Array</title>
+</head>
+
+<body>
+    <div class="part1">
+        <h2> Bài 1</h2>
+        <h5> Nối các phần tử chuỗi trong một mảng</h5>
+        <div id="debai"></div>
+        <button onclick="jplit()"> Result </button><br>
+        <div id="kq"> Kết quả sau khi nối chuỗi</div>
+    </div>
+    <div class="part2">
+        <h2> Bài 2</h2>
+        <h5> Chèn ký tự - vào giữa 2 số chẵn</h5>
+        <input type="text" name="" id="num">
+        <button onclick="chen()"> Result </button><br>
+        <div id="kq1"> Kết quả: </div>
+    </div>
+    <div class="part3">
+        <h2> Bài 3</h2>
+        <h5> Chuyển chữ hoa thành chữ thường và ngược lại</h5>
+        <input type="text" name="" id="string"> Nhập chuỗi <br>
+        <button onclick="changeString()"> Result </button><br>
+        <div id="kq2"> Kết quả: </div>
+    </div>
+    <script>
+        //bài 1
+        let myColor = ["Red", "Green", "White", "Black"];
+        document.getElementById('debai').innerHTML = " Mảng đã cho <br> myColor=  [ " + myColor + " ]";
+        function jplit() {
+            let text = "";
+            for (let i = 0; i < myColor.length; i++) {
+                text += (myColor[i] + ", ");
+            }
+            document.getElementById('kq').innerHTML = text;
+        }
+        //bài 2
+        let number = [];
+        function chen() {
+            let text = '';
+            let a = parseInt(document.getElementById('string').value);
+            number.push(a);
+            for (let i = 0; i < number.length; i++) {
+                if ((number[i] % 2 === 0) && (number[i + 1] % 2 === 0)) {
+                    text = text + number[i] + " " + '-';
+                } else {
+                    text = text + number[i] + " ";
+                }
+            }
+            document.getElementById('kq1').innerHTML = text;
+        }
+        //bài 3 chuyển chữ hoa thành chữ thường và nguwowic lại
+        let upCase = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        let lowCase = "qwertyuiopasdfghjklzxcvbnm"
+        function changeString() {
+            let a = document.getElementById('string').value;
+            let Result ="";
+            for (let i = 0; i < a.length; i++) {
+                
+                for (let j = 0; j < upCase.length; j++) {
+                    if (a[i] === upCase[j]) {
+                        Result +=  a[i].toLowerCase();
+                    }
+                }
+                for (let k = 0; k < lowCase.length; k++) {
+                        if (a[i] === lowCase[k]) {
+                            Result +=  a[i].toUpperCase();
+                        }
+                    }
+            }
+            document.getElementById('kq2').innerHTML = "Kết quả : " + Result;
+        }
+    </script>
+</body>
+
+</html>
