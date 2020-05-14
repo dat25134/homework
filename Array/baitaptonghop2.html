@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập về mảng bài số 2</title>
+</head>
+
+<body>
+    <input type="text" id="input"> Nhập từ cần tra từ điển <br>
+    <button onclick="trans()"> Translation</button>
+    <div id="kq"> Trans :</div>
+    <script>
+        let eng = ["ok", "hello", "cat", "book", "computer", "telephone", "television", "radio"];
+        let vn = ["đúng", "chào", "mèo", "sách", "máy tính", "điện thoại", "tivi", "ra - đi - ô"];
+        let check = false; kq ="";
+        function trans() {
+            let nhap = document.getElementById('input').value;
+            for (let i = 0; i<eng.length; i++) {
+                if (nhap == eng[i]) {
+                    kq = vn[i];
+                    check=true;
+                } 
+            }
+            if (check){
+                document.getElementById('kq').innerHTML=kq;
+                check=false;
+
+            }else {
+                document.getElementById('kq').innerHTML="Không có trong từ điển";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
