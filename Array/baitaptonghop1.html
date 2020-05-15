@@ -41,13 +41,13 @@
             document.getElementById('kq').innerHTML = text;
         }
         //bài 2
-        let number = [];
+        let number = "";
         function chen() {
             let text = '';
-            let a = parseInt(document.getElementById('string').value);
-            number.push(a);
+            let a = document.getElementById('num').value;
+            number=a
             for (let i = 0; i < number.length; i++) {
-                if ((number[i] % 2 === 0) && (number[i + 1] % 2 === 0)) {
+                if (((+number[i]) % 2 === 0) && ((+number[i + 1]) % 2 === 0)) {
                     text = text + number[i] + " " + '-';
                 } else {
                     text = text + number[i] + " ";

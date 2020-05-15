@@ -1,41 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <style>
+        div {
+            font-size: 200%;
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            padding: 5px;
+            border: gray 1px solid;
+        }
+
+        #IDcolunm {
+            margin-right: 915px;
+
+        }
+
+        #IDrow {
+            width: 63px;
+            float: left;
+
+        }
+
+        #carogame {
+            width: 330px;
+            float: left;
+            margin-top: -37px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+
 <body>
     <h3>Caro Game Simple</h3>
+    <div id="IDcolunm"></div>
+    <div id="IDrow"></div>
     <div id="carogame">Hình vẽ</div>
+    <br /><br /><input type='button' value='Đánh X' onclick='changeValue(),checkWin()' id="button">
     <script>
         let b = document.getElementById("carogame");
-
+        let check = true;
         let board = [];
-        let data = "";
+        let data = "", rowcContent = ""; colunmContent = "";
+        // let checkWin =1;
         for (let i = 0; i < 5; i++) {
-            board[i] = new Array(0, 0, 0, 0, 0);
+            board[i] = new Array(".", ".", ".", ".", ".");
         }
+        for (let i = 0; i < 5; i++) {
+            rowcContent += "<span>" + i + "</span>";
+        }
+        document.getElementById('IDcolunm').innerHTML = rowcContent;
+        for (let i = 0; i < 5; i++) {
+            colunmContent += "<span>" + i + "</span><br>"
+        }
+        document.getElementById('IDrow').innerHTML = colunmContent;
 
         for (let i = 0; i < 5; i++) {
             data += "<br/>";
             for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;";
+                data += "<span>" + board[i][j] + "</span>";
+            }
+        }
+        b.innerHTML = data;
+
+        function changeValue() {
+            if (check) {
+                let positionX = +prompt(" Lượt X X: ");
+                let positionY = +prompt(" Lượt X Y: ");
+                while ((positionX < 0) || (positionX > 5) || (positionY < 0) || (positionY > 5)) {
+                    alert('Nhập cũng để sai! Nhập lại')
+                    positionX = +prompt(" Lượt X X: ");
+                    positionY = +prompt(" Lượt X Y: ");
+                }
+                data = "";
+                if (board[positionX][positionY] === "."){
+                    board[positionX][positionY]="X";
+                }else {
+                    alert('Đánh rầu!Nhập lại đi ba!!!');
+                    changeValue();  
+                    return false;
+                }
+                for (let i = 0; i < 5; i++) {
+                    data += "<br/>";
+                    for (let j = 0; j < 5; j++) {
+                        data += "<span>" + board[i][j] + "</span>";
+                    }
+                }
+                b.innerHTML = data;
+                document.getElementById('button').value = "Đánh O"
+                check = !check;
+                checkWin("X")
+            } else {
+                let positionX = +prompt(" Lượt O X: ");
+                let positionY = +prompt(" Lượt O Y: ");
+                while ((positionX < 0) || (positionX > 5) || (positionY < 0) || (positionY > 5)) {
+                    alert('Nhập cũng để sai! Nhập lại')
+                    positionX = +prompt(" Lượt O X: ");
+                    positionY = +prompt(" Lượt O Y: ");
+                }
+                data = "";
+                if (board[positionX][positionY] === "."){
+                    board[positionX][positionY]="O";
+                }else {
+                    alert('Đánh rầu!Nhập lại đi ba!!!');
+                    changeValue();  
+                    return false;
+                }
+                for (let i = 0; i < 5; i++) {
+                    data += "<br/>";
+                    for (let j = 0; j < 5; j++) {
+                        data += "<span>" + board[i][j] + "</span>";
+                    }
+                }
+                b.innerHTML = data;
+                document.getElementById('button').value = "Đánh X"
+                check = !check;
+                checkWin("O")
+            }
+        }
+        function checkWin(XorO) {
+            for (i = 0; i < 5; i++) {
+                for (j = 0; j < 5; j++) {
+                    if ((board[i][j] === XorO) && (board[i][j + 1] === XorO) && (board[i][j + 2] === XorO)) {
+                        alert(XorO +" thắng");
+                        break;
+                    }
+                }
+            }
+            for (j = 0; j < 5; j++) {
+                for (i = 0; i < 5; i++) {
+                    if ((board[i][j] === XorO) && (board[i + 1][j] === XorO) && (board[i + 2][j] === XorO)) {
+                        alert(XorO +" thắng");
+                        break;
+                    }
+                }
+            }
+            for (i = 0; i < 5; i++) {
+                for (j = 0; j < 5; j++) {
+                    if ((board[i][j] === XorO) && (board[i + 1][j + 1] === XorO) && (board[i + 2][j + 2] === XorO)) {
+                        alert( XorO +" thắng");
+                        break;
+                    }
+                }
+            }
+            for (i = 0; i < 5; i++) {
+                for (j = 0; j < 5; j++) {
+                    if ((board[i][j] === XorO) && (board[i + 1][j - 1] === XorO) && (board[i + 2][j - 2] === XorO)) {
+                        alert(XorO+"thắng");
+                        break;
+                    }
+                }
             }
         }
 
-        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-        b.innerHTML = data;
-        function changeValue() {
-            let positionX = prompt("X: ");
-            let positionY = prompt("Y: ");
-            data = "";
-            board[positionX][positionY] = "x";
-            for (let i = 0; i < 5; i++) {
-                data += "<br/>";
-                for (let j = 0; j < 5; j++) {
-                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-                }
-            }
-            data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-            b.innerHTML = "<hr/>" + data;
-        }
     </script>
 </body>
 
