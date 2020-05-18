@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập tổng hợp sử dụng hàm 2</title>
+</head>
+
+<body>
+    <div class="bai1">
+        <h2> Bai 1: Tính bình phương của một số bất kỳ nhập vào</h2>
+        Nhap vao mot so bat ky<input type="text" id="num1"><br>
+        <button onclick="mul2()"> Tính bình phương </button>
+        <div id="kq1"></div>
+    </div>
+    <div class="bai2">
+        <h2> Bai 2: Tính chu vi, diện tích của hình tròn</h2>
+        Nhap vao bán kính hình tròn<input type="text" id="rad">m<br>
+        <button onclick="figSandC()"> Tính </button>
+        <div id="kq2"></div>
+    </div>
+    <div class="bai3">
+        <h2> Bai 3: Tính giai thừa của một số</h2>
+        Nhập vào một số <input type="number" id="mul" onchange="mulNum(this.value)" oninput="mulNum(this.value)"><br>
+        <div id="kq3"></div>
+    </div>
+    <div class="bai4">
+        <h2> Bai 4: Kiểm tra ký tự nhập vào có phải là ký tự số</h2>
+        Nhập vào một ký tự <input type="text" id="sector" onchange="display(this.value)"
+            oninput="display(this.value)"><br>
+        Ký tự nhập vào là ký tự số ?<div id="kq4"></div>
+    </div>
+    <div class="bai5">
+        <h2> Bai 5: Nhập vào 3 số, trả về giá trị bé nhất, xuất ra màn hình</h2>
+        <button onclick="display5()">Thực hiện</button>
+        <div id="kq5"></div>
+    </div>
+    <div class="bai6">
+        <h2> Bai 6: Nhập vào 1 số, kiểm tra có phải là số nguyên dương ko</h2>
+        <button onclick="display6()">Thực hiện</button>
+        <div id="kq6"></div>
+    </div>
+    <div class="bai7">
+        <h2> Bai 7: Nhập vào 2 số, đổi chỗ 2 số vừa nhập</h2>
+        <button onclick="changeNum()">Thực hiện</button>
+        <div id="kq7"></div>
+    </div>
+    <div class="bai8">
+        <h2> Bai 8: Truyền vào 1 mảng, đảo ngược mảng</h2>
+        <button onclick="reserveArray()">Thực hiện</button>
+        <div id="kq8"></div>
+    </div>
+    <div class="bai9">
+        <h2> Bai 9: Truyền vào 1 mảng, nhập ký tự, kiểm tra ký tự trong mảng</h2>
+        <button onclick="display9()">Thực hiện</button>
+        <div id="kq9"></div>
+    </div>
+    <script>
+        const PI = 3.14159265359;
+
+        //bai 1: Tinh binh phuong mot so
+        function mul2() {
+            let num = +document.getElementById('num1').value;
+            document.getElementById('kq1').innerHTML = "Bình phương của số " + num + " là " + num ** 2;
+        }
+        //bai 2: Tính chu vi + dien tich hình tròn
+        function figSandC() {
+            let rad = +document.getElementById('rad').value;
+            let S = rad ** 2 * PI;
+            let C = rad * 2 * PI;
+            document.getElementById('kq2').innerHTML = "Diện tích hình tròn bán kính r= " + rad + " m là S= " + S.toFixed(2) + " m2<br> Chu vi hình tròn có bán kính là r = " + rad + " m là  C = " + C.toFixed(2) + " m";
+        }
+        //bài 3: tinh giai thừa của một số nhập vào
+        function mulNum(mul) {
+            mul = parseInt(document.getElementById('mul').value);
+            let result = 1;
+            for (let i = 1; i <= mul; i++) result *= i;
+            document.getElementById('kq3').innerHTML = "Giai thừa của " + mul + " là " + result;
+        }
+        //bai 4 : kiểm tra ký tự nhập vào có phải là ký tự số
+        function checkNum(sector) {
+            sector = document.getElementById('sector').value
+            return !isNaN(sector);
+        }
+        function display(sector) {
+            document.getElementById('kq4').innerHTML = checkNum(sector);
+        }
+
+        //bài 5 : Nhập vào 3 số bất kỳ, trả về giá trị bé nhất
+        function minNum() {
+            let a = +prompt('nhập số 1');
+            let b = +prompt('nhập số 2');
+            let c = +prompt('nhập số 3');
+            if (a > b) a = b;
+            if (a > c) a = c;
+            return a;
+        }
+        function display5() {
+            document.getElementById('kq5').innerHTML = " Số bé nhất trong 3 số là " + minNum();
+        }
+        //bài 6 :kiểm tra số nguyên dương
+        function checkNum() {
+            let a = parseInt(prompt('nhập một số'));
+            if (a <0) return false;
+            else return true;
+        }
+        function display6() {
+            document.getElementById('kq6').innerHTML = " Số nhập vào là số nguyên dương?" + checkNum();
+        }
+        //bài 7: Nhập 2 số, đổi chỗ 2 số
+        function changeNum() {
+            let a = +prompt('Nhập số 1');
+            let b = +prompt('Nhập số 2');
+            let tmp = 0;
+            tmp = a;
+            a=b;
+            b=tmp;
+            document.getElementById('kq7').innerHTML = "Hai số được truyền vào là  a = " + b + " và b = " + a + "<br> Sau khi đổi chỗ là a = "+ a + " và b = " + b;
+        }
+        //bài 8: 
+        function reserveArray() {
+            let A = [1, 2, 5, 'D', 'S', 'K', 'L'];
+            let reserveA = [];
+            for (let i = (A.length - 1); i >= 0; i--) {
+                reserveA[A.length - i - 1] = A[i];
+            }
+            document.getElementById('kq8').innerHTML = "Mang da tao A = [ " + A + "] <br>Mang da dao nguoc la reserveA = [ " + reserveA + "]";
+        }
+        //bài 9: 
+        function checkArray() {
+            let A = [1, 2, 5, 'D', 'S', 'K', 'L'];
+            let a =prompt('Nhập vào 1 ký tự');
+            let count =0;
+            for (let i =0; i <A.length; i++) {
+                if (a===A[i]) count++;
+            }
+            if (count>0) return count; else {return -1};
+        }
+        function display9(){
+            document.getElementById('kq9').innerHTML = " Phần tử nhập vào có ở trong mảng?" + checkArray();
+        }
+
+    </script>
+</body>
+
+</html>
