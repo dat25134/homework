@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap tong hop su dung ham 1</title>
+</head>
+
+<body>
+    <div class="bai1">
+        <h2>Bai 1: Goi ham alertMessage</h2>
+        <button onclick="alertMessage()"> Goi ham alertMessage() </button>
+    </div>
+    <div class="bai2">
+        <h2>Bai 2: Nhap 1 so, tang them 1 don vi va in ra</h2>
+        <button onclick="add()"> Nhap vao 1 so bat ky </button>
+        <div id="kq"> Ket qua: </div>
+    </div>
+    <div class="bai3">
+        <h2>Bai 3: Truyen 2 tham so</h2>
+        <button onclick="add1()"> Truyen 2 tham so bat ky </button>
+        <div id="kq3"> Ket qua: </div>
+    </div>
+    <div class="bai5">
+        <h2>Bai 5: In chom sao</h2>
+        <button onclick="checkStar()"> Get chom` sao </button>
+    </div>
+
+    <script>
+        //bai 1: goi ham alertMessage
+        function alertMessage() {
+            alert("Xin chao");
+        }
+        // bai 2: nhap vao 1 so,tang them 1 don vi vaf tra ve gia tri cho ham day
+        let a, b;
+        function add() {
+            a = +prompt('Nhap vao 1 so bat ky');
+            document.getElementById('kq').innerHTML = " Ket qua: " + numberPlus1(a);
+        }
+        function numberPlus1(num) {
+            return num + 1;
+        }
+        // bai3 truyen vao 2 tham so
+        function add1() {
+            a = +prompt("Truyen vao tham so 1");
+            b = +prompt("Truyen vao tham so 2");
+            document.getElementById('kq3').innerHTML = checkNum(a, b);
+        }
+        function checkNum(num1, num2) {
+            if (num1 > num2) {
+                alert("Truyen vao lai tham so")
+            } else {
+                return num1 + num2;
+            }
+        }
+        //bai 4 :
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = 0;
+        alert(result);
+        result = addNumbers();
+        alert(result);
+        //bai 5
+        function checkStar() {
+            let star = ["Polaris", "Aldebaran", "Deneb", "Vega", 'Altair', 'Dubhe', 'Regulus'];
+            let constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+            let starInput= prompt('Nhap ngoi sao ban muon');
+            let check = false;
+            for (let i= 0; i<star.length;i++){
+                if (starInput===star[i]){
+                    alert(constellation[i]);check=true; break;
+                }
+            }
+            if (check) {} else {alert('Khong co trong cac chom sao')}
+        }
+
+
+    </script>
+</body>
+
+</html>
