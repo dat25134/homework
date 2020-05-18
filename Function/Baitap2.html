@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap 2</title>
+</head>
+<body>
+    <input type="number" name="" id="feet"
+    onchange="changeFeettoMet(this.value)"
+    oninput="changeFeettoMet(this.value)">
+    <div id="kq"> Change to metter = </div>
+    <script>
+        function changeFeettoMet(feet){
+            let m = 0.305*feet;
+            document.getElementById('kq').innerHTML= " Change to metter = " + m + " m";
+        }
+
+    </script>
+</body>
+</html>
