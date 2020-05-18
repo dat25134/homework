@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai tap Array 2</title>
+</head>
+
+<body>
+    <div class="part1">
+        <h2> Lesson 1</h2>
+        <button onclick="displayArray()"> Tao mang, hien thi mang</button>
+        <div id="kq"></div>
+    </div>
+    <div class="part2">
+        <h2> Lesson 2</h2>
+        <button onclick="reserveArray()"> Tao mang, dao nguoc, hien thi mang</button>
+        <div id="kq2"></div>
+    </div>
+    <div class="part3">
+        <h2> Lesson 3</h2>
+        <button onclick="countNumber()"> Tao mang, dao nguoc, hien thi mang</button>
+        <div id="kq3"></div>
+    </div>
+    <div class="part4">
+        <h2> Lesson 4</h2>
+        <input type="text" id="string"><br>
+        <button onclick="countWord()"> Nhap chuoi, dem so tu trong chuoi vua nhap</button>
+        <div id="kq4"></div>
+    </div>
+    <div class="part5">
+        <h2> Lesson 5</h2>
+        Nhap chuoi 1 <input type="text" id="string1"><br>
+        Nhap chuoi 2 <input type="text" id="string2"><br>
+        <button onclick="compare()"> Nhap chuoi, compare 2 chuoi</button>
+        <div id="kq5"></div>
+    </div>
+    <div class="part6">
+        <h2> Lesson 6</h2>
+        Nhap chuoi <input type="text" id="string3"><br>
+        <button onclick="swapword()"> Nhap chuoi, thay (-) bằng (_)</button>
+        <div id="kq6"></div>
+    </div>
+    <script>
+        //bai 1, tao 1 mang 2 chieu va in ra cac phan tu trong mang
+        let a = [];
+        function creatArray() {
+            for (let i = 0; i < 5; i++) {
+                a[i] = [];
+                for (let j = 0; j < 2; j++) {
+                    a[i][j] = Math.round(Math.random() * 11);
+                }
+            }
+
+        }
+        function displayArray() {
+            a = [];
+            creatArray();
+            let text = "";
+            for (let i = 0; i < a.length; i++) {
+                text += "<br>";
+                for (let j = 0; j < a[i].length; j++) {
+                    text += a[i][j] + " ";
+                }
+
+            }
+            document.getElementById('kq').innerHTML = "Mang da dc tao <br>[" + text + "]";
+        }
+        //bai 2
+        function reserveArray() {
+            let A = [1, 2, 5, 'D', 'S', 'K', 'L'];
+            let reserveA = [];
+            for (let i = (A.length - 1); i >= 0; i--) {
+                reserveA[A.length - i - 1] = A[i];
+            }
+            document.getElementById('kq2').innerHTML = "Mang da tao A = [ " + A + "] <br>Mang da dao nguoc la reserveA = [ " + reserveA + "]";
+        }
+        //bai 3
+        function countNumber() {
+            let A = [1, 2, 5, 'D', 'S', 'K', 'L'];
+            let count = 0;
+            for (let i = 0; i < A.length; i++) {
+                if (typeof (A[i]) === "number") {
+                    count += 1;
+                }
+            }
+            document.getElementById('kq3').innerHTML = " Mang tao ra A = [ " + A + "]<br> So ky tu so trong mang da tao la : " + count;
+        }
+        // bai 4
+        function countWord() {
+            let word = document.getElementById('string').value;
+            let count = 0;
+            for (let i = 0; i < word.length; i++) {
+                if (word[i] === " ") count += 1;
+            }
+            document.getElementById('kq4').innerHTML = " So tu trong chuoi vua nhap la : " + (count + 1) + " tu";
+
+        }
+        // bai 5
+        function compare(){
+            let word1 = document.getElementById('string1').value;
+            let word2 = document.getElementById('string2').value; 
+            if (word1===word2) document.getElementById('kq5').innerHTML = "Hai chuoi giong nhau";
+            else  document.getElementById('kq5').innerHTML = "Hai chuoi khac nhau";
+        }
+        //bai 6
+        function swapword(){
+            let word = document.getElementById('string3').value;
+            let text="";
+            for (let i=0; i < word.length;i++){
+                if (word[i] === "-"){
+                    text +="_";
+                } else { text += word[i]}
+            }
+            document.getElementById('kq6').innerHTML = " Chuoi sau khi da chuyen doi: " + text; 
+        }
+    </script>
+</body>
+
+</html>
