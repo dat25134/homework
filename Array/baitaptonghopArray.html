@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="part1">
+        <h2> Lesson 1</h2>
+        <button onclick="larger10()"> Tao mang va tim so LON HON 10</button>
+        <div id="kq"></div>
+    </div>
+    <div class="part2">
+        <h2> Lesson 2</h2>
+        <button onclick="MAX()"> Tao mang va tim so MAX</button>
+        <div id="kq1"></div>
+    </div>
+    <div class="part3">
+        <h2> Lesson 3</h2>
+        <button onclick="AVERAGE()"> Tao mang va tim so MAX, TINH AVERAGE</button>
+        <div id="kq2"></div>
+    </div>
+    <div class="part4">
+        <h2> Lesson 4</h2>
+        <button onclick="REVERSE()"> Tao mang va dao nguoc mang</button>
+        <div id="kq3"></div>
+    </div>
+    <div class="part5">
+        <h2> Lesson 5</h2>
+        <button onclick="countNumber()"> Tao mang va dem so nguyen am</button>
+        <div id="kq4"></div>
+    </div>
+    <div class="part6">
+        <h2> Lesson 6</h2>
+        <button onclick="check()"> Tao mang va kiem tra co ton tai trong mang</button>
+        <div id="kq5"></div>
+    </div>
+    <div class="part7">
+        <h2> Lesson 7</h2>
+        <button onclick="checkAndDelete()"> Tao mang va kiem tra, xoa phan tu ra khoi mang</button>
+        <div id="debai"></div>
+        <div id="kq6"></div>
+    </div>
+    <div class="part8">
+        <h2> Lesson 8</h2>
+        <button onclick="sortArray()"> Tao mang va sap xep theo thu tu giam dan</button>
+        <div id="array"></div>
+        <div id="kq7"></div>
+    </div>
+    <div class="part9">
+        <h2> Lesson 9</h2>
+        <button onclick="joinArray()"> Tao mang va noi chuoi</button>
+        <div id="array2"></div>
+        <div id="kq8"></div>
+    </div>
+    <script>
+        //bai 1, tao mang co 10 phan tu, tinh va hien thi xem co bao nhieu so >=10;
+
+        function larger10() {
+            document.getElementById('kq').innerHTML = "";
+            let A10 = [];
+            let pos = "", cont = "";
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 101);
+                if (A10[i] >= 10) {
+                    pos = pos + i + ", ";
+                    cont = cont + A10[i] + ", ";
+                }
+            }
+            document.getElementById('kq').innerHTML = "MANG A :[" + A10 + "]<br>Vi tri cac so lon hon 10 la: " + pos + "co gia tri lan luot la" + cont;
+        }
+        // bai 2: 
+        function MAX() {
+            document.getElementById('kq').innerHTML = "";
+            let A10 = [];
+            let max = 0, pos = 0;
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 101);
+                if (A10[i] >= max) {
+                    max = A10[i];
+                    pos = i;
+                }
+            }
+            document.getElementById('kq1').innerHTML = "MANG A : [" + A10 + "]<br> Gia tri lon nhat trong mang: " + max + " o vi tri index : " + pos;
+        }
+        //BAI 3 TIM MAX, TINH AVERAGE
+        function AVERAGE() {
+            document.getElementById('kq2').innerHTML = "";
+            let A10 = [];
+            let max = 0, sum = 0;
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 101);
+                if (A10[i] >= max) {
+                    max = A10[i];
+                }
+                sum += A10[i];
+            }
+            document.getElementById('kq2').innerHTML = "MANG A : [" + A10 + "]<br> Gia tri lon nhat trong mang: " + max + " va trung binh cong cac phan tu trong mang " + sum / A10.length;
+        }
+        // bai 4 tao va tao nguoc cac phan tu trong mang
+        function REVERSE() {
+            document.getElementById('kq3').innerHTML = "";
+            let A10 = [];
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 101);
+            }
+            document.getElementById('kq3').innerHTML = "MANG A : [" + A10 + "] <br> mang dc dao nguoc lai la [ " + A10.reverse() + "]";
+        }
+        // bai 5 tao mang, dem so nguyen am
+        function countNumber() {
+            let limit = parseInt(prompt('Nhap so luong phan tu'));
+            let A = [];
+            let nhap = "", count = 0;
+            for (let i = 0; i < limit; i++) {
+                nhap = parseInt(prompt('Nhập phần tử thứ ' + (i + 1) + " trong mang"));
+                A.push(nhap);
+            }
+            for (let i = 0; i < A.length; i++) {
+                if (A[i] < 0) {
+                    count += 1;
+                }
+            }
+            document.getElementById('kq4').innerHTML ="MANG A : [" + A10 + "] <br> so luong so nguyen to am = " + count;
+        }
+        //bai 6 kiem tra mot so nguyen nhap vao co trong mang hay ko
+        function check() {
+            document.getElementById('kq5').innerHTML = "";
+            let A10 = [];
+            let max = 0, pos = 0;
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 101);
+            }
+            let nhap = parseInt(prompt("Nhập một số bất kỳ mà bạn muốn"));
+            c = false;
+            for (let i = 0; i<A10.length; i++){
+                if (nhap===A10[i]){
+                    c = true;
+                    break;
+                }
+            }
+            if (c) {
+                document.getElementById('kq5').innerHTML ="MANG A : [" + A10 + "] <br> Giá trị " +nhap+ " tồn tại trong mảng";
+            } else {
+                document.getElementById('kq5').innerHTML ="MANG A : [" + A10 + "] <br> Giá trị " +nhap+ " không tồn tại trong mảng";
+            }
+
+        }
+        // bài 7, xóa phần tử V ra khỏi mảng
+        function checkAndDelete() {
+            document.getElementById('kq6').innerHTML = "";
+            let A10 = [];
+            let max = 0, pos = 0;
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 11);
+            }
+            let nhap = parseInt(prompt("Nhập một số bất kỳ mà bạn muốn"));
+            let c = false;
+            document.getElementById('debai').innerHTML = "Mang da cho A=[" + A10 + "]";
+            for (let i = 0; i<A10.length; i++){
+                if (nhap===A10[i]){
+                    c = true;
+                     A10.splice(i,1)
+                    break;
+                }
+            }
+            if (c) {
+                document.getElementById('kq6').innerHTML = "Giá trị " +nhap+ " tồn tại trong mảng. Mang da xoa se thanh [" + A10+"]";
+            } else {
+                document.getElementById('kq6').innerHTML ="Giá trị " +nhap+ " không tồn tại trong mảng";
+            }
+
+        }
+        //Bai 8, sap xep theo thu tu giam gian
+        function sortArray() {
+            document.getElementById('kq7').innerHTML = "";
+            let A10 = [];
+            for (let i = 0; i < 10; i++) {
+                A10[i] = Math.round(Math.random() * 11);
+            }
+            document.getElementById('array').innerHTML= "Mang vua tao A=[" + A10 + "]";
+            A10.sort();
+            A10.reverse();
+            document.getElementById('kq7').innerHTML = "Mang sau khi sap xep lai A=[" + A10 + "]";
+        }
+        //bai 9, noi chuoi 2 mang lai voi nhau
+        function joinArray() {
+            document.getElementById('kq8').innerHTML = "";
+            let a = [], b=[];
+            let c=[];
+            for (let i = 0; i < 10; i++) {
+                a[i] = Math.round(Math.random() * 11);
+                b[i] = Math.round(Math.random() * 11);
+            }
+            document.getElementById('array2').innerHTML= "Mang vua tao a = [" + a + "] <br> mang b = [" + b+"]";
+            for (let i=0; i<10; i ++) {
+                c[i] = [];
+                c[i].splice(0,0,a[i],b[i]);
+            }
+            document.getElementById('kq8').innerHTML = "Mang sau khi gop lai c = [ " + c + "]";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tôi là một thằng ngốc!!!</title>
+</head>
+
+<body onload="Ready()">
+    <h2>Type anything slowly</h2>
+    <textarea rows="9" cols="50" id="stupid" readonly></textarea>
+    <script>
+        let a = "Tôi là một thằng ngốc!!!";
+        function removeString() {
+            let textString = document.getElementById('stupid').value;
+            let tam = "";
+                for (let i = 0; i < (textString.length - 1); i++) {
+                    tam += textString[i];
+                }
+                textString = tam;
+            document.getElementById('stupid').value = textString;
+        }
+        function typeText() {
+            let textString = document.getElementById('stupid').value;
+            if (textString.length === a.length) {
+                document.getElementById('stupid').value = "";
+            } else {
+                for (let i = 0; i < textString.length + 1; i++) {
+                    if (a[i] !== textString[i]) {
+                        textString += a[i];
+                        document.getElementById('stupid').value = textString;
+                        break;
+                    }
+                }
+            }
+        }
+        function type(evt) {
+            switch (evt.keyCode) {
+                case 8:
+                    removeString();
+                    break;
+                default: typeText();
+
+            }
+        }
+        function Ready() {
+            window.addEventListener('keydown', type);
+        }
+
+    </script>
+</body>
+
+</html>
