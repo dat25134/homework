@@ -3,33 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bai tap 2</title>
-</head>
-<body>
-    <!-- <input type="number" name="" id="feet"
-    onchange="changeFeettoMet(this.value)"
-    oninput="changeFeettoMet(this.value)">
-    <div id="kq"> Change to metter = </div>
-    <script>
-        function changeFeettoMet(feet){
-            let m = 0.305*feet;
-            document.getElementById('kq').innerHTML= " Change to metter = " + m + " m";
-        }
-
-    </script> -->
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change feet to metter and nguoc lai</title>
 </head>
 <body>
-    Nhap so<input type="text" id="input" onchange="change()" oninput="change()"> 
-    <select name="" id="doi" onchange="change()">
+    Nhap so<input type="text" id="input"> 
+    <select name="" id="doi">
         <option value="f">Feet</option>
         <option value="m">Metter</option>
     </select>
+    <button onclick="change()">Click</button>
     <div id="kq"> Result:....</div>
     <script>
         function changeFeet(num){
@@ -61,7 +43,5 @@
             }
         }
     </script>
-</body>
-</html>
 </body>
 </html>
