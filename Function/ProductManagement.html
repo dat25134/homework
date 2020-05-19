@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <style>
+        /* .input {
+            width: 50%;
+            height: 75px;
+            padding: 50px;
+            background-color: gainsboro;
+            text-align: center;
+        }
+
+        input {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: Crimson;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            font
+        } */
+    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="init()">
+    <h2 >Add New Product</h2>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button  class="input-group-text" onclick="addProduct()">Add</button>
+        </div>
+        <input class="form-control" type="text" placeholder="New Product" id="nhap">
+      </div>
+    </div>
+    <div class="display">
+        <h2>Display All Product</h2>
+        <div id="table"></div>
+    </div>
+
+    <script>
+        let data = ["Sony Xperia", "Samsung Galaxy", "Nokia 6"];
+        function init() {
+            let table = "<table class ='table table-striped'>";
+            table += "<th> Product Name </th> <th></th> <th></th> <th style ='color: #DF3A01'>" + data.length + " Product </th>";
+            for (let i = 0; i < data.length; i++) {
+                table += "<tr>";
+                table += "<td>" + data[i] + "</td> <td><button class='btn btn-success' onclick='editProduct(" + i + ")'>Edit</button></td><td><button class='btn btn-success'  onclick='deleteProduct(" + i + ")'>Delete</button></td><td></td>";
+                table += "</tr>"
+            }
+            table += "</table>";
+            document.getElementById('table').innerHTML = table;
+        }
+        function addProduct() {
+            let add = document.getElementById('nhap').value;
+            data.push(add);
+            init();
+        }
+        function editProduct(num) {
+            let nhap = prompt('Input Product are u want to edit');
+            data[num] = nhap;
+            debugger;
+            init();
+        }
+        function deleteProduct(num) {
+            data.splice(num, 1);
+            init();
+        }
+    </script>
+</body>
+
+</html>
