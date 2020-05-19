@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra Palindrome</title>
+</head>
+<body>
+    <script>
+        function reserverString(a) {
+
+            // if (text.length >= a.length ){
+            //     return "";
+            // } else {
+            //     text += a.substring((a.length -i),(a.length -i+1));
+            //     return text+ B(a,i+1)  ;
+            // } 
+            if (a == "") {
+                return "";
+            } else {
+                return reserverString(a.substring(1)) + a.charAt(0);
+            }
+        }
+        function inputString() {
+            let A = prompt("Nhap vao mot chuoi bat ky");
+            let reserveA = reserverString(A);
+            if (reserveA === A) {
+                alert('Chuoi nhap vao la chuoi palindrome')
+            } else {
+                alert('Chuoi nhap vao khong phai la chuoi palindrome')
+            }
+
+        }
+        inputString();
+    </script>
+</body>
+
+</html>
