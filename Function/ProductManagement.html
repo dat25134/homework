@@ -47,7 +47,7 @@
     <h2 >Add New Product</h2>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <button  class="input-group-text" onclick="addProduct()">Add</button>
+            <button  class="btn btn-primary" onclick="addProduct()">Add</button>
         </div>
         <input class="form-control" type="text" placeholder="New Product" id="nhap">
       </div>
@@ -58,7 +58,7 @@
     </div>
 
     <script>
-        let data = ["Sony Xperia", "Samsung Galaxy", "Nokia 6"];
+        let data = [["Sony Xperia"], "Samsung Galaxy", "Nokia 6"];
         function init() {
             let table = "<table class ='table table-striped'>";
             table += "<th> Product Name </th> <th></th> <th></th> <th style ='color: #DF3A01'>" + data.length + " Product </th>";

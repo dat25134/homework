@@ -64,3 +64,9 @@ ul{
 hr {
     margin-top: 50px;
 }
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(green, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
