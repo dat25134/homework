@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        function Rectangle(width, height){
+            this.width = width;
+            this.height = height;
+            this.areaRect = function(){
+                return this.width*this.height;
+            }
+            this.circuitRect = function (){
+                return (this.width+this.height)*2;
+            }
+            this.setWidth = function(){
+              let  width = +prompt ('Update width');
+                return this.width = width;
+            }
+            this.setHeight = function(){
+               let  height = +prompt ('Update height');
+                return this.height = height;
+            }
+        }
+        function getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+        let RECTANGLE = [];
+        function getRandomColor() {
+            var red = getRandomHex();
+            var green = getRandomHex();
+            var blue = getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green + ")";
+        }
+        function creatRect(){
+            let ctx = document.getElementById('myCanvas').getContext("2d");
+            let width = +prompt('Input width');
+            let height = +prompt('Input height');
+            let rectangle1 = new Rectangle(width,height);
+            RECTANGLE.push(rectangle1);
+            var color = getRandomColor();
+            ctx.strokeStyle = color;
+            ctx.strokeRect(0,0,rectangle1.width,rectangle1.height);           
+        }
+        creatRect();
+        alert ( 'Dien tich hinh chu nhat = ' + RECTANGLE[0].areaRect());
+        alert ( 'Chu vi hinh chu nhat = ' + RECTANGLE[0].circuitRect());
+        RECTANGLE[0].setHeight();
+        RECTANGLE[0].setWidth();
+        alert ( 'Dien tich hinh chu nhat sau khi update= ' + RECTANGLE[0].areaRect());
+        alert ( 'Chu vi hinh chu nhat sau khi update = ' + RECTANGLE[0].circuitRect());
+    </script>
+</body>
+</html>
