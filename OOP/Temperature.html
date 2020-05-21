@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+
+<body>
+    <script>
+        function temerature(c) {
+            // do {
+            //     c = +prompt('Nhap nhiet do ');
+            //     if (c < -273) { alert('nhap lai'); } else this.c = c;
+            // } while (c<-273)
+            this.c =c;
+            
+            this.changeF = function () {
+                    return this.c * 1.8 + 32;
+                }
+            this.changeKevin = function () {
+                return this.c + 273.15;
+            }
+        }
+        let a = new temerature(25);
+        alert(a.c + ' độ C chuyển sang độ F là ' + a.changeF() + "độ F");
+        alert(a.c + ' độ C chuyển sang độ kevin là ' + a.changeKevin() );
+    </script>
+</body>
+
+</html>
