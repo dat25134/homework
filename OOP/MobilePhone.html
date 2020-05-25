@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Phone</title>
+    <STYle>
+        .btnIP {
+            background-color: Crimson;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px 5px;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        .btnNokia {
+            border: gray 1px solid;
+            width: 100%;
+            text-align: left;
+            margin-top: 10px;
+            background-color: greenyellow;
+            border-radius: 2px;
+
+        }
+    </STYle>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div class="iphone" style="flex: 3;">
+            <img src="../img/ip.jpg" alt="" style="z-index: 0;">
+            <div id="screenIP"
+                style="position: absolute; border: 1px solid; width: 269px; height: 434px; margin-top: -524px;margin-left: 15px; z-index: 10; background-color: black;">
+            </div>
+            <div class="home" style="margin-top: 15px;margin-left: 124px;">
+                <button id="home" style=" position: absolute; border-radius: 50%;height: 50px; margin-top: -88px;"
+                    onclick="Screen(iphone)">Home</button>
+            </div>
+            <button style="margin-left: 80px;" onclick="iphone.setPower()">Power</button><button>Charge</button>
+        </div>
+        <div class="Song" style="flex: 6;">
+            <img src="../img/songtrai.jpg" alt="">
+            <img src="../img/cotsong.png" alt="">
+            <img src="../img/songphai.jpg" alt="">
+        </div>
+        <div class="nokia" style="flex: 3;">
+            <img src="../img/nokia.jpg" alt="">
+            <div id="screenNokia"
+                style="border: black; width: 164px; height: 197px; z-index: 100;margin-top: -490px;margin-left: 41px; border: 1px solid; background-color: black; position: absolute;">
+
+            </div>
+            <button style="margin-top: 3px;margin-left: 65px;" onclick="nokia.setPower()">Power</button>
+            <button>Charge</button>
+        </div>
+    </div>
+
+    <script>
+        function Screen(a) {
+            if (a.power) {
+                let screen = "";
+                screen += "<lable>Battery:"+a.battery+"%</label></br>"
+                screen += "<button class=" + a.btn + " onclick='soanThu(" + a.type + ")'>Soan tin nhắn</button>";
+                screen += "<button class=" + a.btn + " onclick=" + a.type + ".hopthuden()>Hộp thư đến</button>";
+                screen += "<button class=" + a.btn + " onclick = " + a.type + ".thudagui()>Thư đã gửi</button>";
+                screen += "<button class=" + a.btn + " onclick = " + a.type + ".displayThunhap()>Thư nháp</button>";
+                document.getElementById(a.screen).style.backgroundImage = a.bg;
+                document.getElementById(a.screen).innerHTML = screen;
+            }
+        }
+        function soanThu(a) {
+            let screen = "";
+            screen += "<label>Người nhận</label><hr><input type='text' id ='gui" + a.screen + "' style = 'width: 80%;'></br> ";
+
+            switch (a.type) {
+                case "iphone": {
+                    screen += "<label>Nội dung thư gửi</label><hr><textarea rows='20' cols='35' id ='nd" + a.screen + "'></textarea> ";
+                    screen += "<button style = 'margin-left : 2px'> Back </button> <button style = 'margin-left : 160px'> Send </button>"; break;
+                }
+                case "nokia": {
+                    screen += "<label>Nội dung thư gửi</label><hr><textarea style='margin: 0px;width: 156px;height: 70px;' id ='nd" + a.screen + "'></textarea> ";
+                    screen += "<button style = 'margin-left : 2px' onclick='" + a.type + ".thunhap()'> Back </button> <button style = 'margin-left : 60px' onclick='" + a.type + ".send()'> Send </button>"; break;
+                }
+            }
+            document.getElementById(a.screen).style.backgroundImage = a.bg;
+            document.getElementById(a.screen).innerHTML = screen;
+
+        }
+        function mobile(power, battery, screen, bg, btn, type) {
+            this.power = false;
+            this.chargging = false;
+            this.battery = battery;
+            this.mess = [];
+            this.messReciever = [];
+            this.messSent = [];
+            this.screen = screen;
+            this.bg = bg;
+            this.btn = btn;
+            this.type = type;
+            this.setPower = function () {
+                this.power = !this.power;
+                if (this.power) {
+                    Screen(this);
+                } else {
+                    document.getElementById(this.screen).innerHTML = "";
+                    document.getElementById(this.screen).style.backgroundColor = "black";
+                    document.getElementById(this.screen).style.backgroundImage = "";
+                }
+            }
+            this.plugBattery = function () {
+                for (let i = 1; this.battery < 100;) {
+                    this.battery = this.battery + i
+                }
+            }
+            this.hopthuden = function () {
+                let screen = "<div>Hộp thư đến</div><hr>";
+                for (let i = 0; i < this.messReciever.length; i++) {
+                    screen += "<button class =" + this.btn + ">Tin nhắn " + (i + 1) + "</button>"
+                }
+                document.getElementById(this.screen).innerHTML = screen;
+            }
+            this.displayThunhap = function () {
+                let screen = "<div>Thư Nháp</div><hr>";
+                for (let i = 0; i < this.mess.length; i++) {
+                    screen += "<button class =" + this.btn + " onclick ='" + this.type + ".hienThuNhap(" + i + ")'>Tin nhắn nháp " + (i + 1) + "</button>"
+                }
+                document.getElementById(this.screen).innerHTML = screen;
+            }
+            this.hienThuNhap = function (a) {
+                soanThu(this);
+                let noidung = this.mess[a][0];
+                let nguoinhan = this.mess[a][1];
+                document.getElementById("gui" + this.screen).value = nguoinhan;
+                document.getElementById("nd" + this.screen).value = noidung;
+            }
+            this.send = function () {
+                let nguoinhan = document.getElementById('gui' + this.screen).value;
+                let noidung = document.getElementById('nd' + this.screen).value;
+                for (let i = 0; i < array.length; i++) {
+                    if (nguoinhan === (array[i].type + ''))
+                        array[i].messReciever.unshift(noidung);
+                }
+                let count = this.messSent.length;
+                this.messSent[count] = [];
+                this.messSent[count].unshift(nguoinhan);
+                this.messSent[count].unshift(noidung);
+                let screen = "<div>Gửi thư thành công</div><hr><br><button onclick=Screen(" + this.type + ")>Tiếp Tục</button>";
+                document.getElementById(this.screen).innerHTML = screen;
+            }
+            this.thudagui = function () {
+                let screen = "<div>Thư đã gửi</div><hr>";
+                for (let i = 0; i < this.messSent.length; i++) {
+                    screen += "<button class =" + this.btn + " onclick='" + this.type + ".displayThudagui(" + i + ")'>Tin nhắn đã gửi " + (i + 1) + "</button>"
+                }
+                document.getElementById(this.screen).innerHTML = screen;
+            }
+            this.displayThudagui = function (a) {
+                let screen = "";
+                screen += "<label>Người nhận</label><hr><lable>" + this.messSent[a][1] + "</lable></br></br>";
+                screen += "<label>Nội dung thư đã gửi</label><hr><lable>" + this.messSent[a][0] + "</lable></br>";
+                document.getElementById(this.screen).style.backgroundImage = this.bg;
+                document.getElementById(this.screen).innerHTML = screen;
+
+            }
+            this.thunhap = function () {
+                let nguoinhan = document.getElementById('gui' + this.screen).value;
+                let noidung = document.getElementById('nd' + this.screen).value;
+                let count = this.mess.length;
+                this.mess[count] = [];
+                this.mess[count].unshift(nguoinhan);
+                this.mess[count].unshift(noidung);
+                Screen(this);
+            }
+        }
+        let iphone = new mobile(true, 50, "screenIP", "url('../img/bgip.jpg')", 'btnIP', 'iphone');
+        let nokia = new mobile(true, 90, "screenNokia", "url('../img/bgnokia.jpg')", "btnNokia", 'nokia');
+        let array = [iphone, nokia];
+    </script>
+</body>
+
+</html>
