@@ -35,7 +35,7 @@
         let imgbb = document.getElementById('barber');
         let barber = new gamer(250, 20, imgbb, 100, 50);
         let coin = document.getElementById('coin');
-        let point = new gamer(280,50,coin,50,50);
+        let point = new gamer(280, 50, coin, 50, 50);
 
         function obj(x, y, color, name) {
             this.x = x;
@@ -62,100 +62,90 @@
             this.size = [width, height];
             this.img = img;
             this.speed = 2;
-            this.check =true;
-            this.setCheck = function(){
+            this.check = true;
+            this.setCheck = function () {
                 return this.check = false;
             }
             this.display = function () {
                 ctx.drawImage(this.img, this.x, this.y, this.size[0], this.size[1])
             }
-            this.displayBarber = function (a,b) {
+            this.displayBarber = function (a, b) {
                 ctx.clearRect(a.x, a.y, a.size[0], a.size[1]);
                 ctx.clearRect(b.x, b.y, b.size[0], b.size[1]);
                 a.y += a.speed;
                 b.y += b.speed;
-                if (a.y > 450) { a.y = 0; a.x = randomNum(160,330) };
-                if (b.y > 450) { b.y = 0, b.x = randomNum(160,400) };
+                if (a.y > 450) { a.y = 0; a.x = randomNum(160, 330) };
+                if (b.y > 450) { b.y = 0, b.x = randomNum(160, 400) };
                 displayall();
                 ctx.drawImage(a.img, a.x, a.y, a.size[0], a.size[1]);
                 ctx.drawImage(b.img, b.x, b.y, b.size[0], b.size[1]);
                 score();
                 endGame();
                 upspeed();
-                window.requestAnimationFrame(function () { a.displayBarber(a,b); });
+                window.requestAnimationFrame(function () { a.displayBarber(a, b); });
             }
         }
         function drawObj(a) {
             ctx.fillStyle = a.color;
             ctx.fillRect(a.x, a.y, a.size[0], a.size[1])
         }
-        function randomNum(a,b){
-            let num=Math.round(Math.random()*1000); 
-            while ((num<=a)||(num>b)){
-                num=Math.round(Math.random()*1000);
+        function randomNum(a, b) {
+            let num = Math.round(Math.random() * 1000);
+            while ((num <= a) || (num > b)) {
+                num = Math.round(Math.random() * 1000);
             }
             return num;
         }
         // point.x, point.y;
         // barber.x, barber.y;
         // BMW.x, BMW.y;
-        let  pointer = 0;
-        let check1=true, check2=true;
-        function score(){
-            if (((point.x+ (point.size[0]/2))> BMW.x) && ((point.x+point.size[0]/2)<(BMW.x+BMW.size[0]))&&((point.y+point.size[1])>BMW.y)&&(point.y+point.size[1])<(BMW.y+50)) {
-                point.y=-20;
+        let pointer = 0;
+        let checkpointer=5
+        let check1 = true, check2 = true;
+        function score() {
+            if (((point.x + (point.size[0] / 2)) > BMW.x) && ((point.x + point.size[0] / 2) < (BMW.x + BMW.size[0])) && ((point.y + point.size[1]) > BMW.y) && (point.y + point.size[1]) < (BMW.y + 50)) {
+                point.y = -20;
                 pointer++;
+                check1=true;
             }
-            ctx.clearRect(453,0,100,100)
+            ctx.clearRect(453, 0, 100, 100)
             ctx.fillStyle = 'green';
             ctx.font = '20px serif';
-            ctx.fillText("Score = " + pointer,450,50);
+            ctx.fillText("Score = " + pointer, 450, 50);
         }
-        function upspeed(){
-            if ((pointer===5)&&(check1)){
-                barber.speed*=1.5;
-                point.speed*=1.5;
-                crossCenter1.speed*=1.5;
-                crossCenter2.speed*=1.5;
-                crossCenter3.speed*=1.5;
-                crossCenter4.speed*=1.5;
-                crossLeft1.speed*=1.5;
-                crossLeft2.speed*=1.5;
-                crossRight1.speed*=1.5;
-                crossRight2.speed*=1.5;
+        function upspeed() {
+            if ((pointer === checkpointer) && (check1)) {
+                barber.speed *= 1.5;
+                point.speed *= 1.5;
+                crossCenter1.speed *= 1.5;
+                crossCenter2.speed *= 1.5;
+                crossCenter3.speed *= 1.5;
+                crossCenter4.speed *= 1.5;
+                crossLeft1.speed *= 1.5;
+                crossLeft2.speed *= 1.5;
+                crossRight1.speed *= 1.5;
+                crossRight2.speed *= 1.5;
                 check1 = false;
-            }
-            if ((pointer===10)&&(check2)){
-                barber.speed*=2;
-                point.speed*=2;
-                crossCenter1.speed*=2;
-                crossCenter2.speed*=2;
-                crossCenter3.speed*=2;
-                crossCenter4.speed*=2;
-                crossLeft1.speed*=2;
-                crossLeft2.speed*=2;
-                crossRight1.speed*=2;
-                crossRight2.speed*=2;
-                check2=false;
+                checkpointer+=5;
             }
         }
-        function endGame(){
-            if (((barber.x+ (barber.size[0]/2))> BMW.x) && ((barber.x+barber.size[0]/2)<(BMW.x+BMW.size[0]))&&((barber.y+barber.size[1])>BMW.y)&&(barber.y+barber.size[1])<(BMW.y+50)) {
+        function endGame() {
+            if (((barber.x + (barber.size[0] / 2)) > BMW.x) && ((barber.x + barber.size[0] / 2) < (BMW.x + BMW.size[0])) && ((barber.y + barber.size[1]) > BMW.y) && (barber.y + barber.size[1]) < (BMW.y + 50)) {
                 alert('Thua rầu bạn ei!!!');
-                barber.y=-20;
+                barber.y = -200;
                 pointer = 0;
-                barber.speed=2;
-                point.speed=2;
-                crossCenter1.speed=2;
-                crossCenter2.speed=2;
-                crossCenter3.speed=2;
-                crossCenter4.speed=2;
-                crossLeft1.speed=2;
-                crossLeft2.speed=2;
-                crossRight1.speed=2;
-                crossRight2.speed=2;
+                barber.speed = 2;
+                point.speed = 2;
+                crossCenter1.speed = 2;
+                crossCenter2.speed = 2;
+                crossCenter3.speed = 2;
+                crossCenter4.speed = 2;
+                crossLeft1.speed = 2;
+                crossLeft2.speed = 2;
+                crossRight1.speed = 2;
+                crossRight2.speed = 2;
                 check1 = true;
-                check2=true;
+                check2 = true;
             }
         }
         let lineLeft = new obj(150, 0, 'white');
@@ -202,7 +192,7 @@
         crossCenter4.setsize(20);//width
         crossCenter4.setsize(10);//height
         drawObj(crossCenter4);
-        
+
         function runWay() {
             crossCenter1.run(crossCenter1);
             crossCenter2.run(crossCenter2);
@@ -241,9 +231,9 @@
             }
 
         }
-        window.onload = function () { 
-            barber.displayBarber(barber,point);
-            runWay(); 
+        window.onload = function () {
+            barber.displayBarber(barber, point);
+            runWay();
             window.addEventListener('keydown', movecar)
         }
     </script>
