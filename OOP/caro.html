@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Caro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        table,th,td,tr{
+            width: 200px;
+            height: 100px;
+            border: solid 1px black;
+        }
+        table{
+            position: absolute;
+            top: 20px;
+            left: 1000px;
+            border-collapse: collapse;
+            background-color: yellow;
+            color: red;
+        }
+
+        #table {
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .value {
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            border: gray solid 2px;
+        }
+
+        .O {
+            background-color: gray;
+            color: blue;
+        }
+
+        .X {
+            background-color: gray;
+            color: red;
+        }
+
+        .start {
+            width: 480px;
+            height: 240px;
+            background-image: url("../img/Cocaro.jpg");
+            text-align: center;
+            margin-left: 30%;
+            color: rgb(128, 36, 0);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .start1 {
+            display: flex;
+            padding-top: 5%;
+        }
+
+        #btn1 {
+            margin-top: 10%;
+        }
+
+        .btn-1 {
+            background-color: #F27935;
+            margin-top: 50px;
+        }
+
+        .btn-1 .round {
+            background-color: #f59965;
+        }
+
+        /* Thiết lập chung cho các button */
+        a {
+            text-decoration: none;
+            -moz-border-radius: 30px;
+            -webkit-border-radius: 30px;
+            border-radius: 30px;
+            padding: 12px 53px 12px 23px;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            font-weight: bold;
+            position: relative;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        a span {
+            position: relative;
+            z-index: 3;
+        }
+
+        a .round {
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            z-index: 2;
+        }
+
+        a .round i {
+            position: absolute;
+            top: 50%;
+            margin-top: -6px;
+            left: 50%;
+            margin-left: -4px;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .txt {
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        /* Mẫu button thu nhat */
+
+        .type-1 a:hover {
+            padding-left: 48px;
+            padding-right: 28px;
+        }
+
+        .type-1 a:hover .round {
+            width: calc(100% - 6px);
+            -moz-border-radius: 30px;
+            -webkit-border-radius: 30px;
+            border-radius: 30px;
+        }
+
+        .type-1 a:hover .round i {
+            left: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table"></div>
+    <div class="start" id="start">
+        <div class="start1">
+            <div>
+                <Label>Nhập số cột</Label><input type="text" id="col" class="">
+            </div>
+            <div>
+                <label> Nhập số hàng</label><input type="text" id="row" class="">
+            </div>
+        </div>
+        <div class="type-1">
+            <div>
+                <a href="#" class="btn btn-1" onclick="DisplayTable(),ketqua()">
+                    <span class="txt">Let's Play</span>
+                    <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="TableGold" id="TableGold">
+    </div>
+
+    <script>
+        let table = "";
+        let data = [];
+        let get = '';
+        let check = true;
+        let col = +document.getElementById('col').value;
+        let row = +document.getElementById('row').value;
+        let tablegold = "";
+
+        function DisplayTable() {
+            col = +document.getElementById('col').value;
+            row = +document.getElementById('row').value;
+            for (let i = 0; i <= row; i++) {
+                table += "<div class='row'>"
+                for (let j = 0; j <= col; j++) {
+                    table += "<div class='value' id='" + i + "," + j + "' onclick='ChangeXorO(" + i + "," + j + ")'></div>"
+
+                }
+                table += "</div>"
+            }
+            document.getElementById('table').innerHTML = table;
+            document.getElementById('start').style.display = "none";
+        }
+
+        function getValue() {
+            for (let i = 0; i <= row; i++) {
+                data[i] = []
+                for (let j = 0; j <= col; j++) {
+                    get = document.getElementById(i + "," + j).innerHTML
+                    data[i][j] = get;
+                }
+            }
+        }
+
+        function ChangeXorO(x, y) {
+            if (document.getElementById(x + ',' + y).innerHTML === "") {
+                if (check) {
+                    debugger;
+                    document.getElementById(x + ',' + y).innerHTML = "X";
+                    document.getElementById(x + ',' + y).className = 'value X';
+                    getValue()
+                    checkWin("X", col, row);
+                } else {
+                    document.getElementById(x + ',' + y).innerHTML = "O";
+                    document.getElementById(x + ',' + y).className = 'value O';
+                    getValue();
+                    checkWin("O");
+                }
+                check = !check;
+            }
+        }
+        function checkWin(XorO) {
+            for (i = 0; i < row; i++) {
+                for (j = 0; j < col; j++) {
+                    if ((data[i][j] === XorO) && (data[i][j + 1] === XorO) && (data[i][j + 2] === XorO) && (data[i][j + 3] === XorO) && (data[i][j + 4] === XorO)) {
+                        alert(XorO + " thắng");
+                        document.getElementById('table').innerHTML = "";
+                        document.getElementById('start').style.display = "block";
+                        break;
+                    }
+                }
+            }
+            for (j = 0; j < row; j++) {
+                for (i = 0; i < col; i++) {
+                    if ((data[i][j] === XorO) && (data[i + 1][j] === XorO) && (data[i + 2][j] === XorO) && (data[i + 3][j] === XorO) && (data[i + 4][j] === XorO)) {
+                        alert(XorO + " thắng");
+                        document.getElementById('table').innerHTML = "";
+                        document.getElementById('start').style.display = "block";
+                        break;
+                    }
+                }
+            }
+            for (i = 0; i < row; i++) {
+                for (j = 0; j < col; j++) {
+                    if ((data[i][j] === XorO) && (data[i + 1][j + 1] === XorO) && (data[i + 2][j + 2] === XorO) && (data[i + 3][j + 3] === XorO) && (data[i + 4][j + 4] === XorO)) {
+                        alert(XorO + " thắng");
+                        document.getElementById('table').innerHTML = "";
+                        document.getElementById('start').style.display = "block";
+                        break;
+                    }
+                }
+            }
+            for (i = 0; i < row; i++) {
+                for (j = 0; j < col; j++) {
+                    if ((data[i][j] === XorO) && (data[i + 1][j - 1] === XorO) && (data[i + 2][j - 2] === XorO) && (data[i + 3][j - 3] === XorO) && (data[i + 4][j - 4] === XorO)) {
+                        alert(XorO + "thắng");
+                        document.getElementById('table').innerHTML = "";
+                        document.getElementById('start').style.display = "block";
+                        break;
+                    }
+                }
+            }
+        }
+        function ketqua(){
+            tablegold += "<table><tr><th></th><th>X</th><th>O</th></tr><tr><td>Thắng</td><td></td><td></td></tr></table>"
+            document.getElementById('TableGold').innerHTML = tablegold;
+
+        }
+    </script>
+
+</body>
+
+</html>
