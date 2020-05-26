@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple And Human</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(){
+                this.weight = 10;
+            }
+            decrease(){
+                return this.weight-=1
+            }
+            isEmpty(){
+                if (this.weight===0) return true; else return false;
+            }
+            getWeight(){
+                return this.weight
+            }
+        }
+        class Human{
+            constructor(weight,name,gender){
+                this.weight = weight;
+                this.name = name;
+                this.gender = gender;
+            }
+            isMale(){
+                if (gender) return true; else return false;
+            }
+            setGender(gender){
+                this.gender = gender;
+            }
+            checkApple(apple){
+                if (apple.getWeight===0) return false;
+                return true;
+            }
+            eat(apple){
+                apple.weight-=1;
+                this.weight++;
+            }
+            say(){
+                if (this.gender) {alert('Hi, I am Adam')} else {alert('Hi, I am Eva')}  
+            }
+            getName(){
+                return this.name;
+            }
+            setName(name){
+                this.name = name;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            setWeight(weight){
+                this.weight = weight;
+            }
+        }
+
+        let apple1=new Apple();
+        let eva = new Human(40,"Eva",false);
+        let adam = new Human(60,'Adam',true);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.eat(apple1);
+        eva.say();
+        document.write('Cân nặng '+eva.getWeight());
+        document.write('</br>Cân nặng của quả táo' + apple1.weight)
+        adam.say();
+        document.write('</br>Không ăn được quả nào');
+
+    </script>
+    
+</body>
+</html>
