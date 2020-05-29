@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TIVI Online</title>
+<style>
+body {
+background-image:url([url]http://www.timviecnhanh.com/images/bgindex.jpg[/url]);
+margin: 0px;
+padding: 0px;
+}
+</style>
+</head>
+
+<body>
+ <script type="text/javascript">
+  <!--
+	function song(){
+	document.getElementById('music1').innerHTML="<embed type='application/x-mplayer2' id='music2' pluginspage='http://www.microsoft.com/Windows/MediaPlayer/' src='"+document.getElementById('estacao').value+"' name='MediaPlayer1' width='220' height='180' controltype='2' showcontrols='1' showstatusbar='1' AutoStart='true'></embed>";
+	}
+  //-->
+  </script>
+  <div id="jukebox">
+	<span id="music1"><embed type="application/x-mplayer2" id="music1"
+		pluginspage="http://www.microsoft.com/Windows/MediaPlayer/"
+		src="mms://222.255.31.252/InfoTVChannel"
+		name="MediaPlayer1"
+		width="220"
+		height="220"
+		controltype="2"
+		showcontrols="1"
+		showstatusbar="1"
+		AutoStart="1">
+
+	</embed></span>
+
+  </div>
+       <select id="estacao" onchange="song()" size="1">
+	           <option value="mms://www.vtc.com.vn:556/VTC1_01">VTC1
+	           <option value="mms://www.vtc.com.vn:556/VTC2_02">VTC2
+	           <option value="mms://203.162.1.223:556/VTC3_03">VTC3
+	           <option value="mms://203.162.1.223:556/VTC4_04">VTC4
+	           <option value="mms://www.vtc.com.vn:556/VTC5_05">VTC5
+	           <option value="mms://222.255.31.252/InfoTVChannel">Bản tin tài chính
+	           <option value="mms://203.210.215.251/htv7">HTV7
+	           <option value="mms://203.210.215.251/htv9">HTV9
+	           <option value="http://mfile.akamai.com/8178/live/reflector:42352.asx">Dự báo thời tiết
+	           <option value="http://playlist.yahoo.com/makeplaylist.dll?id=1369080&se gment=149773">NASA Tivi
+	           <option value="mms://live.mediaserver.kataweb.it/retea">Ca nhạc thời trang Ý
+	           <option value="mms://203.162.1.223:556/VTV3_08">VTV3
+       </select>       
+
+       <script type="text/javascript">
+        <!--
+          function song(){
+          document.getElementById('music1').innerHTML="<embed type='application/x-mplayer2' id='music2' pluginspage='http://www.microsoft.com/Windows/MediaPlayer/' src='"+document.getElementById('estacao').value+"' name='MediaPlayer1' width='220' height='180' controltype='2' showcontrols='1' showstatusbar='1' AutoStart='true'></embed>";
+          }
+        //-->
+        </script>
+
+</body>
+</html>

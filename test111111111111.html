@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #myCanvas {
-           
-            background-color: rgb(165, 205, 214);
+</head>
+
+<body>
+    <script>
+        function loadDoc1() {
+            const list = ['John', 'Paul', 'George', 'Ringo', 'John'];
+            console.log("List");
+            console.log(list);
+
+            let x = list.filter((v, i) => list.indexOf(v) === i)
+
+            console.log("Remove duplicates array");
+            console.log(x);
         }
         
-    </style>
-</head>
-<body>
-    <canvas id="myCanvas" width="600px" height="400px"></canvas>
-    <img id="myCar" src='/img/ball.jpg' width="40px" height="40px" style="display: none;">   
-    <script src="testttttttttttttttt.js"></script>
+let a= [100, 100, 50, 40, 40, 20, 10];
+
+let b = [5, 25, 50, 120];
+for(let i=0; i<b.length; i++){
+    a.push(b[i]);
+}
+a =a.sort();
+console.log(a);
+
+    </script>
 </body>
+
 </html>

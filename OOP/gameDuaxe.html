@@ -100,13 +100,13 @@
         // barber.x, barber.y;
         // BMW.x, BMW.y;
         let pointer = 0;
-        let checkpointer=5
+        let checkpointer = 5
         let check1 = true, check2 = true;
         function score() {
             if (((point.x + (point.size[0] / 2)) > BMW.x) && ((point.x + point.size[0] / 2) < (BMW.x + BMW.size[0])) && ((point.y + point.size[1]) > BMW.y) && (point.y + point.size[1]) < (BMW.y + 50)) {
                 point.y = -20;
                 pointer++;
-                check1=true;
+                check1 = true;
             }
             ctx.clearRect(453, 0, 100, 100)
             ctx.fillStyle = 'green';
@@ -126,7 +126,7 @@
                 crossRight1.speed *= 1.5;
                 crossRight2.speed *= 1.5;
                 check1 = false;
-                checkpointer+=5;
+                checkpointer += 5;
             }
         }
         function endGame() {
@@ -145,7 +145,7 @@
                 crossRight1.speed = 2;
                 crossRight2.speed = 2;
                 check1 = true;
-                checkpointer=5;
+                checkpointer = 5;
             }
         }
         let lineLeft = new obj(150, 0, 'white');
@@ -212,7 +212,7 @@
         function moveCarRight() {
             if (BMW.x <= 320) {
                 ctx.clearRect(BMW.x, BMW.y, BMW.size[0], BMW.size[1]);
-                BMW.x += 10;
+                BMW.x += 5;
                 BMW.display();
             }
         }
@@ -220,14 +220,19 @@
         function moveCarLeft() {
             if (BMW.x >= 160) {
                 ctx.clearRect(BMW.x, BMW.y, BMW.size[0], BMW.size[1]);
-                BMW.x -= 10;
+                BMW.x -= 5;
                 BMW.display();
             }
         }
         function movecar(e) {
+            console.log(e);
             switch (e.key) {
-                case 'ArrowRight': moveCarRight(); break;
-                case 'ArrowLeft': moveCarLeft(); break;
+                case 'ArrowRight':
+                    moveCarRight();
+                    break;
+                case 'ArrowLeft':
+                    moveCarLeft();
+                    break;
             }
 
         }

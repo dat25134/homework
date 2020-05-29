@@ -1,0 +1,66 @@
+<!-- xây dựng class sinhviên có các thuộc tính sau ID, name, email và các phương thức get set, khởi tạo mảng sinh viên gồm 10 obj sinh viên, tìm kiếm sinh viên có email là thanh@codegym.vn, nếu có thì đổi tên thành Thanh, còn ko có thì thông báo không có thanh@codegym.vn -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let inputName, inputEmail;
+        class Student {
+            constructor(id, name, email) {
+                this.id = id;
+                this.name = name;
+                this.email = email;
+            }
+            getName() {
+                return this.name;
+            }
+            getID() {
+                return this.id;
+            }
+            getEmail() {
+                return this.email;
+            }
+            setName(name) {
+                this.name = name;
+            }
+            setID(id) {
+                this.id = id;
+            }
+            setEmail(email) {
+                this.email = email;
+            }
+        }
+        let arrayStudent = [];
+        for (let i = 0; i < 10; i++) {
+            inputName = prompt('Nhập tên cho bạn thứ ' + (i + 1));
+            inputEmail = prompt('Nhập email cho bạn thứ ' + (i + 1))
+            arrayStudent[i] = new Student(i, inputName, inputEmail);
+        }
+        let check = false;
+        let index;
+        let email1 = "thanh@codegym.vn";
+        function findStudent(email) {
+            for (let i = 0; i < arrayStudent.length; i++) {
+                if (arrayStudent[i].email === email) {
+                    check = true;
+                    index = i;
+                    break;
+                }
+            }
+            if (check) {
+                    arrayStudent[index].setName("Thanh");
+                    console.log("Tìm thấy sinh viên <br>"+arrayStudent[index]);
+                } else {
+                    alert('Không có sinh viên nào có email là thanh@codegym.vn')
+                }
+        }
+        findStudent(email1);
+    </script>
+</body>
+</html>
